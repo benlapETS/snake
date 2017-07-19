@@ -171,19 +171,12 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(spypunk.snake.model.SnakeInstance)}.
-   */
-  @Test
-  public void testDirectionChanged() {
-  }
-
-  /**
-   * Test method for
    * {@link spypunk.snake.service.SnakeInstanceServiceImpl#pause(spypunk.snake.model.SnakeInstance)}.
    */
   @Test
   public void testPause() {
     service.pause(snake.getSnakeInstance());
+    assertEquals(State.PAUSED, snake.getSnakeInstance().getState());
   }
 
   /**
