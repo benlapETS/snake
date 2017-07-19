@@ -49,11 +49,12 @@ public class SnakeControllerImpl implements SnakeController {
             final SnakeControllerGameLoop snakeControllerGameLoop, final SnakeInstanceService snakeInstanceService,
             final SnakeControllerInputHandler snakeControllerInputHandler,
             final SnakeControllerSnakeEventHandler snakeControllersnakeEventHandler) {
+        // TODO Is this why he inject all those, because he needed here ?
         this.snakeInstanceService = snakeInstanceService;
         this.snakeControllerInputHandler = snakeControllerInputHandler;
         this.snakeControllersnakeEventHandler = snakeControllersnakeEventHandler;
         this.snakeControllerGameLoop = snakeControllerGameLoop;
-
+        // TODO Why aren't they in the constructor parameters too ?
         snake = snakeFactory.createSnake();
         snakeView = snakeViewFactory.createsnakeView(snake);
     }
