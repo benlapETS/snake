@@ -2,220 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8319bfa2-6784-4499-a4d9-9e2da86d709a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.0.1/fileChanges/last-build.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.0.1/fileContent/annotation-processors.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.0.1/fileContent/fileContent.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.0.1/fileHashes/fileHashes.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.0.1/fileHashes/fileHashes.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.0.1/fileHashes/resourceHashesCache.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.0.1/taskHistory/fileSnapshots.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.0.1/taskHistory/taskHistory.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/4.0.1/taskHistory/taskHistory.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/built.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-hdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-mdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileChanges/last-build.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileContent/annotation-processors.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileContent/fileContent.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileHashes/fileHashes.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileHashes/fileHashes.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileHashes/resourceHashesCache.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/4.0.1/taskHistory/fileSnapshots.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/4.0.1/taskHistory/taskHistory.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/4.0.1/taskHistory/taskHistory.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/buildOutputCleanup/built.bin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/buildOutputCleanup/cache.properties.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/icons/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/font/neutronium.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/font/russo_one.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/food/bonus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/food/normal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/icons/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/icons/mute.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/icons/unmute.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/bottom_left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/bottom_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/head_bottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/head_left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/head_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/head_top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/horizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/tail.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/top_left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/top_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/img/snake/vertical.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/sound/background.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/sound/food_eaten.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/sound/game_over.mp3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_android_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/aopalliance_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_collections4_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_core_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/espresso_idling_resource_2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/exposed_instrumentation_api_publish_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/guava_19_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/guice_4_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_integration_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_library_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javawriter_2_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javax_annotation_api_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javax_inject_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jlayer_1_0_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jsr305_2_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mp3spi_1_9_5_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/rules_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/runner_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_api_1_7_21.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_log4j12_1_7_21.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/snake_snake_snake.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_compat_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_ui_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_core_utils_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_fragment_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_media_compat_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_25_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/tritonus_share_0_3_7_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradlew" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradlew.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/settings.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/proguard-rules.pro" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/snake-android.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/androidTest/java/com/etsmtl/ca/log530/snake/ExampleInstrumentedTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/java/com/etsmtl/ca/log530/snake/FullscreenActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/layout/activity_fullscreen.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/values/attrs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/values/colors.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/values/strings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/main/res/values/styles.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/src/test/java/com/etsmtl/ca/log530/snake/ExampleUnitTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/.gradle/buildOutputCleanup/cache.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/build/resources/main/snake.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/build/tmp/jar/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/snake-snake.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources-filtered/snake.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/resources/snake.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/scripts/snake" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake/src/main/scripts/snake.bat" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/snake/.travis.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/AUTHORS" afterPath="$PROJECT_DIR$/snake/AUTHORS" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CHANGELOG.md" afterPath="$PROJECT_DIR$/snake/CHANGELOG.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/COPYING" afterPath="$PROJECT_DIR$/snake/COPYING" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/CREDITS" afterPath="$PROJECT_DIR$/snake/CREDITS" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/snake/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/screenshot.png" afterPath="$PROJECT_DIR$/snake/img/screenshot.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/screenshot_gameover.png" afterPath="$PROJECT_DIR$/snake/img/screenshot_gameover.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/screenshot_pause.png" afterPath="$PROJECT_DIR$/snake/img/screenshot_pause.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/img/screenshot_start.png" afterPath="$PROJECT_DIR$/snake/img/screenshot_start.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/snake/pom.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/assembly/assembly.xml" afterPath="$PROJECT_DIR$/snake/src/assembly/assembly.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/Main.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/constants/SnakeConstants.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/constants/SnakeConstants.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/controller/gameloop/SnakeControllerGameLoop.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/controller/gameloop/SnakeControllerGameLoop.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/controller/gameloop/SnakeControllerGameLoopImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/controller/gameloop/SnakeControllerGameLoopImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/exception/SnakeException.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/exception/SnakeException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/factory/SnakeFactory.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/factory/SnakeFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/factory/SnakeFactoryImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/factory/SnakeFactoryImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/guice/SnakeModule.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/guice/SnakeModule.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/model/Direction.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/Direction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/model/Food.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/Food.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/model/Snake.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/Snake.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/model/SnakeEvent.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/SnakeEvent.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/model/SnakeInstance.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/SnakeInstance.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/service/SnakeInstanceService.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/service/SnakeInstanceService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/service/SnakeInstanceServiceImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/service/SnakeInstanceServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/sound/Sound.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/Sound.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/sound/SoundClip.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/SoundClip.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/sound/SoundClipImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/SoundClipImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/sound/cache/SoundClipCache.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/cache/SoundClipCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/sound/cache/SoundClipCacheImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/cache/SoundClipCacheImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/sound/service/SoundService.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/service/SoundService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/sound/service/SoundServiceImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/service/SoundServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/cache/ImageCache.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/cache/ImageCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/cache/ImageCacheImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/cache/ImageCacheImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/constants/SnakeUIConstants.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/constants/SnakeUIConstants.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/controller/SnakeController.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/SnakeController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/controller/SnakeControllerImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/SnakeControllerImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/controller/command/SnakeControllerCommand.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/command/SnakeControllerCommand.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/controller/event/SnakeControllerSnakeEventHandler.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/event/SnakeControllerSnakeEventHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/controller/event/SnakeControllerSnakeEventHandlerImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/event/SnakeControllerSnakeEventHandlerImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/controller/input/SnakeControllerInputHandler.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/input/SnakeControllerInputHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/controller/input/SnakeControllerInputHandlerImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/input/SnakeControllerInputHandlerImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/factory/SnakeControllerCommandFactory.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/factory/SnakeControllerCommandFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/factory/SnakeControllerCommandFactoryImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/factory/SnakeControllerCommandFactoryImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/factory/SnakeViewFactory.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/factory/SnakeViewFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/factory/SnakeViewFactoryImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/factory/SnakeViewFactoryImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/font/Font.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/font/Font.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/font/FontType.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/font/FontType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/font/cache/FontCache.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/font/cache/FontCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/font/cache/FontCacheImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/font/cache/FontCacheImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/icon/Icon.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/icon/Icon.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/snakepart/SnakePart.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/snakepart/SnakePart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/util/SwingUtils.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/util/SwingUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/view/AbstractSnakeInstanceView.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/AbstractSnakeInstanceView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/view/SnakeInstanceGridView.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeInstanceGridView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/view/SnakeInstanceScoreView.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeInstanceScoreView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/view/SnakeInstanceStatisticView.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeInstanceStatisticView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/view/SnakeView.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeView.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/view/SnakeViewImpl.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeViewImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/spypunk/snake/ui/view/View.java" afterPath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/View.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources-filtered/snake.properties" afterPath="$PROJECT_DIR$/snake/build/includes/snake.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/font/neutronium.ttf" afterPath="$PROJECT_DIR$/snake/build/resources/main/font/neutronium.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/font/russo_one.ttf" afterPath="$PROJECT_DIR$/snake/build/resources/main/font/russo_one.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/food/bonus.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/food/bonus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/food/normal.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/food/normal.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/icons/icon.png" afterPath="$PROJECT_DIR$/snake/build/includes/icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/icons/mute.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/icons/mute.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/icons/unmute.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/icons/unmute.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/bottom_left.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/bottom_left.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/bottom_right.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/bottom_right.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/head_bottom.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/head_bottom.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/head_left.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/head_left.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/head_right.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/head_right.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/head_top.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/head_top.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/horizontal.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/horizontal.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/tail.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/tail.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/top_left.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/top_left.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/top_right.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/top_right.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/img/snake/vertical.png" afterPath="$PROJECT_DIR$/snake/build/resources/main/img/snake/vertical.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/snake/build/resources/main/log4j.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/sound/background.mp3" afterPath="$PROJECT_DIR$/snake/build/resources/main/sound/background.mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/sound/food_eaten.mp3" afterPath="$PROJECT_DIR$/snake/build/resources/main/sound/food_eaten.mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/sound/game_over.mp3" afterPath="$PROJECT_DIR$/snake/build/resources/main/sound/game_over.mp3" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scripts/snake" afterPath="$PROJECT_DIR$/snake/build/libs/snake" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/scripts/snake.bat" afterPath="$PROJECT_DIR$/snake/build/libs/snake.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/spypunk/snake/service/test/SnakeInstanceServiceTest.java" afterPath="$PROJECT_DIR$/snake/src/test/java/spypunk/snake/service/test/SnakeInstanceServiceTest.java" />
     </list>
     <ignored path="snake.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2608,6 +2395,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2639,6 +2452,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameloop" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2692,6 +2539,7 @@
       <recent name="C:\Users\gabar\git\snake\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gabar\git\snake\snake\src" />
       <recent name="C:\Users\gabar\git\snake" />
       <recent name="C:\Users\gabar\git\snake\snake" />
       <recent name="C:\Users\gabar\git\snake\src\main\resources" />
@@ -3025,7 +2873,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1909" y="0" width="1942" height="2101" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33205688" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -3040,7 +2888,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5157609" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5157609" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
