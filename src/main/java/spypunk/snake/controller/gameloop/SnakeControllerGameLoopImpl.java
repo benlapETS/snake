@@ -19,9 +19,7 @@ import spypunk.snake.ui.controller.SnakeController;
 @Singleton
 public final class SnakeControllerGameLoopImpl implements SnakeControllerGameLoop, Runnable {
 
-    private static final int TICKS_PER_SECOND = 60;
-
-    private static final int SKIP_TICKS = 1000 / TICKS_PER_SECOND;
+    private static final int SKIP_TICKS = 12;
 
     private final ExecutorService executorService;
 
@@ -49,17 +47,13 @@ public final class SnakeControllerGameLoopImpl implements SnakeControllerGameLoo
 
     @Override
     public void run() {
-        long lastTick = System.currentTimeMillis();
-
         while (running) {
-            long newTick = System.currentTimeMillis();
 
-            for (; newTick - lastTick < SKIP_TICKS; newTick = System
-                    .currentTimeMillis()) {
-                // Do nothing here
+            try {
+              Thread.sleep(SKIP_TICKS);
+            } catch (InterruptedException e) {
+              e.printStackTrace();
             }
-
-            lastTick = newTick;
 
             snakeController.onGameLoopUpdate();
         }
