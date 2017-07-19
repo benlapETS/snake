@@ -1,0 +1,84 @@
+apply plugin: 'java'
+
+group = 'spypunk'
+version = '1.3.0-SNAPSHOT'
+
+description = "Snake clone"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+    compile group: 'com.google.inject', name: 'guice', version:'4.1.0'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version:'1.7.21'
+    compile(group: 'com.googlecode.soundlibs', name: 'mp3spi', version:'1.9.5.4') {
+        exclude(module: 'junit')
+    }
+    compile group: 'org.apache.commons', name: 'commons-collections4', version:'4.1'
+}
+
+task libs(type: Copy){
+    into ("$buildDir")
+    from (configurations.runtime) {
+        include ("*.jar")
+        into ("/lib")
+    }
+}
+
+task scripts(type: Copy){
+    into ("$buildDir")
+    from ("$projectDir/src/main/scripts") {
+        include ("*")
+        into ("/libs")
+    }
+}
+
+task assets(type: Copy){
+    into ("$buildDir")
+    from ("$projectDir/src/main/resources/img/icons") {
+        include ("icon.png")
+        into ("/includes")
+    }
+}
+
+task snakeproperties(type:Copy){
+    into ("$buildDir")
+    from ("$projectDir/src/main/resources-filtered") {
+        include ("*.properties")
+        into ("/includes")
+    }
+}
+
+task zip(dependsOn:build,type: Zip){
+
+    archiveName "$rootProject.name-$version" + ".zip"
+    from ("$buildDir/libs"){
+        include "*"
+        into "/"
+    }
+    from ("$buildDir/lib") {
+        include "**/*"
+        into "lib"
+    }
+    from ("$buildDir/includes"){
+        include "*"
+        into "/"
+    }
+    destinationDir file("$buildDir")
+}
+
+jar {
+    manifest {
+        attributes(
+                "Class-Path": configurations.compile.collect { "lib/" + it.getName() }.join(' '),
+                "Main-Class": "spypunk.snake.Main"
+        )
+    }
+    archiveName "snake.jar"
+}
+
+build.dependsOn(libs,scripts,snakeproperties,assets)
