@@ -9,17 +9,14 @@
 package spypunk.snake.service;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import javax.inject.Singleton;
-
-import com.google.common.collect.Lists;
 
 import spypunk.snake.constants.SnakeConstants;
 import spypunk.snake.model.Direction;
@@ -32,66 +29,38 @@ import spypunk.snake.model.SnakeInstance.State;
 
 @Singleton
 public class SnakeInstanceServiceImpl implements SnakeInstanceService {
-  private static final int BONUS_FOOD_RANDOM = 10;
   private static final int BONUS_FOOD_FRAME_LIMIT = 120;
   private final List<Point> gridLocations = createGridLocations();
-  private final Random random = new Random();
 
   @Override
   public void create(final Snake snake) {
     final SnakeInstance snakeInstance = new SnakeInstance();
-    getNextFood(snakeInstance);
+    snakeInstance.produceNewFood(new ArrayList<Point>(gridLocations));
     snake.setSnakeInstance(snakeInstance);
   }
 
   @Override
   public void update(final SnakeInstance snakeInstance) {
-    snakeInstance.getSnakeEvents().clear();
-
-    if (!isSnakeInstanceRunning(snakeInstance)) {
+    snakeInstance.clearSnakeEvents();
+    if (!snakeInstance.isAt(State.RUNNING)) {
       return;
     }
-
-    snakeInstance
-        .setCurrentMovementFrame(snakeInstance.getCurrentMovementFrame() + 1);
-    snakeInstance
-        .setFramesSinceLastFood(snakeInstance.getFramesSinceLastFood() + 1);
-
+    snakeInstance.updateFrames();
     handleMovement(snakeInstance);
     handleBonusFood(snakeInstance);
   }
 
   @Override
   public void pause(final SnakeInstance snakeInstance) {
-    snakeInstance.setState(snakeInstance.getState().onPause());
+    snakeInstance.togglePause();
   }
 
   @Override
   public void updateDirection(final SnakeInstance snakeInstance,
       final Direction direction) {
-    if (isSnakeInstanceRunning(snakeInstance)) {
+    if (snakeInstance.isAt(State.RUNNING)) {
       snakeInstance.setNewSnakeDirection(Optional.of(direction));
     }
-  }
-
-  // TODO getNextFood et ça ne retourne rien ?
-  private void getNextFood(final SnakeInstance snakeInstance) {
-    final List<Point> snakeParts = snakeInstance.getSnakeParts();
-    final List<Point> foodPossibleLocations = Lists.newArrayList(gridLocations);
-
-    foodPossibleLocations.removeAll(snakeParts);
-
-    final int foodIndex = random.nextInt(foodPossibleLocations.size());
-
-    final Point foodLocation = foodPossibleLocations.get(foodIndex);
-
-    final Type foodType = random.nextInt(BONUS_FOOD_RANDOM) == 0 ? Type.BONUS
-        : Type.NORMAL;
-
-    snakeInstance.setFood(Food.Builder.instance().setLocation(foodLocation)
-        .setType(foodType).build());
-
-    snakeInstance.setFramesSinceLastFood(0);
   }
 
   private static List<Point> createGridLocations() {
@@ -102,20 +71,20 @@ public class SnakeInstanceServiceImpl implements SnakeInstanceService {
   }
 
   private void handleMovement(final SnakeInstance snakeInstance) {
-    if (!isTimeToHandleMovement(snakeInstance)) {
+    if (!snakeInstance.canHandleMovement()) {
       return;
     }
 
     handleDirection(snakeInstance);
 
-    if (canSnakeMove(snakeInstance)) {
-      moveSnake(snakeInstance);
+    if (snakeInstance.canMove()) {
+      snakeInstance.move(new ArrayList<Point>(gridLocations));
     } else {
       snakeInstance.setState(State.GAME_OVER);
-      snakeInstance.getSnakeEvents().add(SnakeEvent.GAME_OVER);
+      snakeInstance.addSnakeEvents(SnakeEvent.GAME_OVER);
     }
 
-    resetCurrentMovementFrame(snakeInstance);
+    snakeInstance.resetCurrentMovementFrame();
   }
 
   private void handleBonusFood(final SnakeInstance snakeInstance) {
@@ -124,7 +93,7 @@ public class SnakeInstanceServiceImpl implements SnakeInstanceService {
 
     if (Type.BONUS.equals(foodType)
         && snakeInstance.getFramesSinceLastFood() == BONUS_FOOD_FRAME_LIMIT) {
-      getNextFood(snakeInstance);
+      snakeInstance.produceNewFood(new ArrayList<Point>(gridLocations));
     }
   }
 
@@ -139,65 +108,5 @@ public class SnakeInstanceServiceImpl implements SnakeInstanceService {
     snakeInstance.setSnakeDirection(
         snakeInstance.getSnakeDirection().apply(newSnakeDirection.get()));
     snakeInstance.setNewSnakeDirection(Optional.empty());
-  }
-
-  private void moveSnake(final SnakeInstance snakeInstance) {
-    final Point newLocation = getSnakeHeadPartNextLocation(snakeInstance);
-    snakeInstance.moveTo(newLocation);
-
-    if (snakeInstance.hasEatenFood()) {
-      snakeInstance.grow();
-      updateScore(snakeInstance);
-      updateStatistics(snakeInstance);
-      snakeInstance.getSnakeEvents().add(SnakeEvent.FOOD_EATEN);
-      getNextFood(snakeInstance);
-    }
-  }
-
-  private void updateStatistics(final SnakeInstance snakeInstance) {
-    Type foodType = snakeInstance.getFood().getType();
-    final Map<Type, Integer> statistics = snakeInstance.getStatistics();
-    final Integer foodTypeCount = statistics.get(foodType);
-    statistics.put(foodType, foodTypeCount + 1);
-  }
-
-  private void updateScore(final SnakeInstance snakeInstance) {
-    int points = snakeInstance.getFood().getType().getPoints();
-    snakeInstance.setScore(snakeInstance.getScore() + points);
-  }
-
-  private Point
-      getSnakeHeadPartNextLocation(final SnakeInstance snakeInstance) {
-    final Point snakeHeadPart = snakeInstance.getHead();
-    final Direction direction = snakeInstance.getSnakeDirection();
-    return direction.apply(snakeHeadPart);
-  }
-
-  private boolean canSnakeMove(final SnakeInstance snakeInstance) {
-    final Point newLocation = getSnakeHeadPartNextLocation(snakeInstance);
-
-    final boolean isLocationOutOfBounds = newLocation.x < 0
-        || newLocation.x == SnakeConstants.WIDTH || newLocation.y < 0
-        || newLocation.y == SnakeConstants.HEIGHT;
-
-    return !snakeInstance.getSnakeParts().contains(newLocation)
-        && !isLocationOutOfBounds;
-  }
-
-  private boolean isTimeToHandleMovement(final SnakeInstance snakeInstance) {
-    return snakeInstance.getCurrentMovementFrame() > snakeInstance.getSpeed();
-  }
-
-  private boolean isSnakeInstanceRunning(final SnakeInstance snakeInstance) {
-    return isSnakeInstanceState(snakeInstance, State.RUNNING);
-  }
-
-  private boolean isSnakeInstanceState(final SnakeInstance snakeInstance,
-      final State state) {
-    return state.equals(snakeInstance.getState());
-  }
-
-  private void resetCurrentMovementFrame(final SnakeInstance snakeInstance) {
-    snakeInstance.setCurrentMovementFrame(0);
   }
 }

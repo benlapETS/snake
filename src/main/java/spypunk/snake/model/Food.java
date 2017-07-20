@@ -9,8 +9,11 @@
 package spypunk.snake.model;
 
 import java.awt.Point;
+import java.util.List;
+import java.util.Random;
 
 public class Food {
+  private static final int BONUS_FOOD_RANDOM = 10;
 
     private Point location;
 
@@ -33,31 +36,15 @@ public class Food {
         public abstract int getPoints();
     }
 
-    public static final class Builder {
-
-        private final Food food = new Food();
-
-        private Builder() {
-        }
-
-        public static Builder instance() {
-            return new Builder();
-        }
-
-        public Builder setLocation(final Point location) {
-            food.setLocation(location);
-            return this;
-        }
-
-        public Builder setType(final Type type) {
-            food.setType(type);
-            return this;
-        }
-
-        public Food build() {
-            return food;
-        }
-    }
+  public Food(List<Point> foodPossibleLocations) {
+    Random random = new Random();
+    final int foodIndex = random.nextInt(foodPossibleLocations.size());
+    final Point location = foodPossibleLocations.get(foodIndex);
+    final Type type = random.nextInt(BONUS_FOOD_RANDOM) == 0 ? Type.BONUS
+        : Type.NORMAL;
+    this.location = location;
+    this.type = type;
+  }
 
     public Point getLocation() {
         return location;
@@ -77,5 +64,9 @@ public class Food {
 
   public boolean isAt(Point otherLocation) {
     return location.equals(otherLocation);
+  }
+
+  public int getPoints() {
+    return type.getPoints();
   }
 }

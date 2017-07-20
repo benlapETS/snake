@@ -23,7 +23,6 @@ import spypunk.snake.constants.SnakeConstants;
 import spypunk.snake.model.Food.Type;
 
 public class SnakeInstance {
-
     private int score;
 
     private int speed;
@@ -73,23 +72,18 @@ public class SnakeInstance {
     this.position = new SnakePosition();
     this.statistics = Arrays.stream(Type.values())
         .collect(Collectors.toMap(Function.identity(), ft -> 0));
-
   }
 
     public int getScore() {
         return score;
     }
 
-    public void setScore(final int score) {
-        this.score = score;
-    }
+  public void updateScore() {
+    this.score += food.getPoints();
+  }
 
     public int getSpeed() {
         return speed;
-    }
-
-    public void setSpeed(final int speed) {
-        this.speed = speed;
     }
 
     public State getState() {
@@ -104,25 +98,14 @@ public class SnakeInstance {
         return snakeEvents;
     }
 
-    public void setSnakeEvents(final List<SnakeEvent> snakeEvents) {
-        this.snakeEvents = snakeEvents;
-    }
-
     public int getCurrentMovementFrame() {
         return currentMovementFrame;
     }
 
-    public void setCurrentMovementFrame(final int currentMoveFrame) {
-        currentMovementFrame = currentMoveFrame;
-    }
-
   public List<Point> getSnakeParts() {
+    // TODO Propagate queue to system later
     return new ArrayList<Point>(position.getParts());
   }
-
-  public void setPosition(final SnakePosition newPosition) {
-        this.position = newPosition;
-    }
 
     public Direction getSnakeDirection() {
         return snakeDirection;
@@ -144,39 +127,76 @@ public class SnakeInstance {
         return framesSinceLastFood;
     }
 
-    public void setFramesSinceLastFood(final int framesSinceLastFood) {
-        this.framesSinceLastFood = framesSinceLastFood;
-    }
-
     public Food getFood() {
         return food;
-    }
-
-    public void setFood(final Food food) {
-        this.food = food;
     }
 
     public Map<Type, Integer> getStatistics() {
         return statistics;
     }
 
-    public void setStatistics(final Map<Type, Integer> statistics) {
-        this.statistics = statistics;
-    }
+  public void clearSnakeEvents() {
+    snakeEvents.clear();
+  }
 
-  public void moveTo(Point newLocation) {
+  public void updateFrames() {
+    currentMovementFrame += 1;
+    framesSinceLastFood += 1;
+  }
+
+  public void togglePause() {
+    state = state.onPause();
+  }
+
+  public void produceNewFood(List<Point> foodPossibleLocations) {
+    foodPossibleLocations.removeAll(position.getParts());
+    food = new Food(foodPossibleLocations);
+    framesSinceLastFood = 0;
+  }
+
+  public void addSnakeEvents(SnakeEvent evt) {
+    snakeEvents.add(evt);
+  }
+
+  public void resetCurrentMovementFrame() {
+    currentMovementFrame = 0;
+  }
+
+  public boolean isAt(State state) {
+    return this.state.equals(state);
+  }
+
+  public boolean canHandleMovement() {
+    return currentMovementFrame > speed;
+  }
+
+  public Point getSnakeHeadPartNextLocation() {
+    return snakeDirection.apply(position.getHeadLocation());
+  }
+
+  public boolean canMove() {
+    final Point newLocation = getSnakeHeadPartNextLocation();
+    final boolean isLocationOutOfBounds = newLocation.x < 0
+        || newLocation.x == SnakeConstants.WIDTH || newLocation.y < 0
+        || newLocation.y == SnakeConstants.HEIGHT;
+    return !position.overlaps(newLocation) && !isLocationOutOfBounds;
+  }
+
+  public void updateStatistics() {
+    final Integer foodTypeCount = statistics.get(food.getType());
+    statistics.put(food.getType(), foodTypeCount + 1);
+  }
+
+  public void move(List<Point> gridLocations) {
+    final Point newLocation = getSnakeHeadPartNextLocation();
     position.updateTo(newLocation);
-  }
 
-  public boolean hasEatenFood() {
-    return food.isAt(position.getHeadLocation());
-  }
-
-  public void grow() {
-    position.expand();
-  }
-
-  public Point getHead() {
-    return position.getHeadLocation();
+    if (food.isAt(position.getHeadLocation())) {
+      position.expand();
+      updateScore();
+      updateStatistics();
+      snakeEvents.add(SnakeEvent.FOOD_EATEN);
+      produceNewFood(gridLocations);
+    }
   }
 }

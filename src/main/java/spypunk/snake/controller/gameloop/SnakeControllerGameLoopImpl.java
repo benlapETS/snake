@@ -19,7 +19,7 @@ import spypunk.snake.ui.controller.SnakeController;
 @Singleton
 public final class SnakeControllerGameLoopImpl implements SnakeControllerGameLoop, Runnable {
 
-    private static final int SKIP_TICKS = 12;
+    private static final int SKIP_TICKS = 14;
 
     private final ExecutorService executorService;
 

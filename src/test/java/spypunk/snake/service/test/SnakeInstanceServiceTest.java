@@ -123,7 +123,7 @@ public class SnakeInstanceServiceTest {
    * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(spypunk.snake.model.SnakeInstance)}.
    */
   @Test
-  public void testFramesIncrement() {
+  public void testUpdateFrame() {
     int initialMovementFrame = snake.getSnakeInstance()
         .getCurrentMovementFrame();
     int initialFrameSinceLastFood = snake.getSnakeInstance()

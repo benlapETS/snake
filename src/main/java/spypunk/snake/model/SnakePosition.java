@@ -45,4 +45,8 @@ public class SnakePosition {
     snakeParts.add(lastPartRemoved);
   }
 
+  public boolean overlaps(Point p) {
+    return snakeParts.contains(p);
+  }
+
 }
