@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/snake.iml" filepath="$PROJECT_DIR$/snake.iml" />
       <module fileurl="file://$PROJECT_DIR$/snake-android/snake-android.iml" filepath="$PROJECT_DIR$/snake-android/snake-android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/snake/snake-snake.iml" filepath="$PROJECT_DIR$/snake/snake-snake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/snake-java/snake-java.iml" filepath="$PROJECT_DIR$/snake-java/snake-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/snake-java/snake-java.iml" filepath="$PROJECT_DIR$/snake-java/snake-java.iml" />
     </modules>
   </component>
 </project>

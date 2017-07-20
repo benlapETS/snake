@@ -1,9 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8319bfa2-6784-4499-a4d9-9e2da86d709a" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/snake-android/src/main/res/font/neutronium.ttf" afterPath="$PROJECT_DIR$/snake-android/src/main/assets/fonts/neutronium.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/snake-android/src/main/res/font/russo_one.ttf" afterPath="$PROJECT_DIR$/snake-android/src/main/assets/fonts/russo_one.ttf" />
+    <list default="true" id="8319bfa2-6784-4499-a4d9-9e2da86d709a" name="Default" comment="Renamed snake-java and added properties file.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-java/.gradle/4.0.1/fileContent/fileContent.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-java/.gradle/4.0.1/taskHistory/fileSnapshots.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-java/.gradle/4.0.1/taskHistory/taskHistory.bin" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-java/.gradle/4.0.1/taskHistory/taskHistory.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/snake_java_snake.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gradle.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-android/gradle.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-java/gradle.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snake-java/snake-snake.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/snake_snake_snake.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileContent/fileContent.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/.gradle/4.0.1/taskHistory/fileSnapshots.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/.gradle/4.0.1/taskHistory/taskHistory.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/.gradle/4.0.1/taskHistory/taskHistory.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/build/includes/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/build/includes/snake.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/build/libs/snake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/build/libs/snake.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/build/resources/main/snake.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/build/resources/main/sound/background.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/build/resources/main/sound/food_eaten.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/build/resources/main/sound/game_over.mp3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/build/tmp/jar/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/snake/src/main/resources/snake.properties" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_4.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.gitignore" afterPath="$PROJECT_DIR$/snake-java/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileChanges/last-build.bin" afterPath="$PROJECT_DIR$/snake-java/.gradle/4.0.1/fileChanges/last-build.bin" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/snake-java/.gradle/4.0.1/fileContent/annotation-processors.bin" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/snake-java/.gradle/4.0.1/fileHashes/fileHashes.bin" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/snake-java/.gradle/4.0.1/fileHashes/fileHashes.lock" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.gradle/4.0.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/snake-java/.gradle/4.0.1/fileHashes/resourceHashesCache.bin" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.gradle/buildOutputCleanup/built.bin" afterPath="$PROJECT_DIR$/snake-java/.gradle/buildOutputCleanup/built.bin" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.gradle/buildOutputCleanup/cache.properties" afterPath="$PROJECT_DIR$/snake-java/.gradle/buildOutputCleanup/cache.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.gradle/buildOutputCleanup/cache.properties.lock" afterPath="$PROJECT_DIR$/snake-java/.gradle/buildOutputCleanup/cache.properties.lock" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/.travis.yml" afterPath="$PROJECT_DIR$/snake-java/.travis.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/AUTHORS" afterPath="$PROJECT_DIR$/snake-java/AUTHORS" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/CHANGELOG.md" afterPath="$PROJECT_DIR$/snake-java/CHANGELOG.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/COPYING" afterPath="$PROJECT_DIR$/snake-java/COPYING" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/CREDITS" afterPath="$PROJECT_DIR$/snake-java/CREDITS" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/README.md" afterPath="$PROJECT_DIR$/snake-java/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build.gradle" afterPath="$PROJECT_DIR$/snake-java/build.gradle" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/font/neutronium.ttf" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/font/neutronium.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/font/russo_one.ttf" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/font/russo_one.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/food/bonus.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/food/bonus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/food/normal.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/food/normal.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/icons/icon.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/icons/icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/icons/mute.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/icons/mute.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/icons/unmute.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/icons/unmute.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/bottom_left.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/bottom_left.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/bottom_right.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/bottom_right.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/head_bottom.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/head_bottom.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/head_left.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/head_left.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/head_right.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/head_right.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/head_top.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/head_top.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/horizontal.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/horizontal.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/tail.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/tail.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/top_left.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/top_left.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/top_right.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/top_right.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/img/snake/vertical.png" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/img/snake/vertical.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/build/resources/main/log4j.properties" afterPath="$PROJECT_DIR$/snake-java/build/resources/main/log4j.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/img/screenshot.png" afterPath="$PROJECT_DIR$/snake-java/img/screenshot.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/img/screenshot_gameover.png" afterPath="$PROJECT_DIR$/snake-java/img/screenshot_gameover.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/img/screenshot_pause.png" afterPath="$PROJECT_DIR$/snake-java/img/screenshot_pause.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/img/screenshot_start.png" afterPath="$PROJECT_DIR$/snake-java/img/screenshot_start.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/pom.xml" afterPath="$PROJECT_DIR$/snake-java/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/snake-snake.iml" afterPath="$PROJECT_DIR$/snake-java/snake-java.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/assembly/assembly.xml" afterPath="$PROJECT_DIR$/snake-java/src/assembly/assembly.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/Main.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/constants/SnakeConstants.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/constants/SnakeConstants.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/controller/gameloop/SnakeControllerGameLoop.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/controller/gameloop/SnakeControllerGameLoop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/controller/gameloop/SnakeControllerGameLoopImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/controller/gameloop/SnakeControllerGameLoopImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/exception/SnakeException.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/exception/SnakeException.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/factory/SnakeFactory.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/factory/SnakeFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/factory/SnakeFactoryImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/factory/SnakeFactoryImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/guice/SnakeModule.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/guice/SnakeModule.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/Direction.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/model/Direction.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/Food.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/model/Food.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/Snake.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/model/Snake.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/SnakeEvent.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/model/SnakeEvent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/SnakeInstance.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/model/SnakeInstance.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/model/SnakePosition.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/model/SnakePosition.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/service/SnakeInstanceService.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/service/SnakeInstanceService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/service/SnakeInstanceServiceImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/service/SnakeInstanceServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/Sound.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/sound/Sound.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/SoundClip.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/sound/SoundClip.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/SoundClipImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/sound/SoundClipImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/cache/SoundClipCache.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/sound/cache/SoundClipCache.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/cache/SoundClipCacheImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/sound/cache/SoundClipCacheImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/service/SoundService.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/sound/service/SoundService.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/sound/service/SoundServiceImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/sound/service/SoundServiceImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/cache/ImageCache.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/cache/ImageCache.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/cache/ImageCacheImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/cache/ImageCacheImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/constants/SnakeUIConstants.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/constants/SnakeUIConstants.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/SnakeController.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/controller/SnakeController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/SnakeControllerImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/controller/SnakeControllerImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/command/SnakeControllerCommand.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/controller/command/SnakeControllerCommand.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/event/SnakeControllerSnakeEventHandler.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/controller/event/SnakeControllerSnakeEventHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/event/SnakeControllerSnakeEventHandlerImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/controller/event/SnakeControllerSnakeEventHandlerImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/input/SnakeControllerInputHandler.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/controller/input/SnakeControllerInputHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/controller/input/SnakeControllerInputHandlerImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/controller/input/SnakeControllerInputHandlerImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/factory/SnakeControllerCommandFactory.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/factory/SnakeControllerCommandFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/factory/SnakeControllerCommandFactoryImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/factory/SnakeControllerCommandFactoryImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/factory/SnakeViewFactory.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/factory/SnakeViewFactory.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/factory/SnakeViewFactoryImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/factory/SnakeViewFactoryImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/font/Font.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/font/Font.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/font/FontType.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/font/FontType.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/font/cache/FontCache.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/font/cache/FontCache.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/font/cache/FontCacheImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/font/cache/FontCacheImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/icon/Icon.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/icon/Icon.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/snakepart/SnakePart.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/snakepart/SnakePart.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/util/SwingUtils.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/util/SwingUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/AbstractSnakeInstanceView.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/AbstractSnakeInstanceView.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeInstanceGridView.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/SnakeInstanceGridView.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeInstanceScoreView.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/SnakeInstanceScoreView.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeInstanceStatisticView.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/SnakeInstanceStatisticView.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeView.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/SnakeView.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeViewImpl.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/SnakeViewImpl.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/View.java" afterPath="$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/View.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources-filtered/snake.properties" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/snake.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/font/neutronium.ttf" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/font/neutronium.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/font/russo_one.ttf" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/font/russo_one.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/food/bonus.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/food/bonus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/food/normal.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/food/normal.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/icons/icon.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/icons/icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/icons/mute.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/icons/mute.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/icons/unmute.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/icons/unmute.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/bottom_left.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/bottom_left.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/bottom_right.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/bottom_right.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/head_bottom.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/head_bottom.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/head_left.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/head_left.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/head_right.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/head_right.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/head_top.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/head_top.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/horizontal.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/horizontal.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/tail.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/tail.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/top_left.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/top_left.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/top_right.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/top_right.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/img/snake/vertical.png" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/img/snake/vertical.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/log4j.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/sound/background.mp3" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/sound/background.mp3" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/sound/food_eaten.mp3" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/sound/food_eaten.mp3" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/resources/sound/game_over.mp3" afterPath="$PROJECT_DIR$/snake-java/src/main/resources/sound/game_over.mp3" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/scripts/snake" afterPath="$PROJECT_DIR$/snake-java/src/main/scripts/snake" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/main/scripts/snake.bat" afterPath="$PROJECT_DIR$/snake-java/src/main/scripts/snake.bat" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/snake/src/test/java/spypunk/snake/service/test/SnakeInstanceServiceTest.java" afterPath="$PROJECT_DIR$/snake-java/src/test/java/spypunk/snake/service/test/SnakeInstanceServiceTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0.1/fileContent/annotation-processors.bin" afterPath="$PROJECT_DIR$/.gradle/4.0.1/fileContent/annotation-processors.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.0.1/fileContent/fileContent.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0.1/fileHashes/fileHashes.bin" />
@@ -12,13 +154,20 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0.1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0.1/taskHistory/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0.1/taskHistory/taskHistory.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snake-android/build.gradle" afterPath="$PROJECT_DIR$/snake-android/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snake-android/snake-android.iml" afterPath="$PROJECT_DIR$/snake-android/snake-android.iml" />
     </list>
     <ignored path="snake.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="snake-java/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,15 +199,45 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+            <state relative-caret-position="405">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="snake.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snake/src/main/resources/snake.properties">
+      <file leaf-file-name="gradle.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gradle.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snake-java/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/snake-java/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snake-java/build/resources/main/log4j.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -67,11 +246,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snake-android/src/main/res/values/strings.xml">
+      <file leaf-file-name="gradle.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snake-android/gradle.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="snake.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snake-java/src/main/resources/snake.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,68 +269,28 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snake-android/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="459">
+              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gradle-wrapper.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+      <file leaf-file-name="snake.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snake-java/build/resources/main/snake.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="54">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snake/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="41" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SnakeViewImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeViewImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SnakeInstanceGridView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeInstanceGridView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rectangle.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/java/awt/Rectangle.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <file leaf-file-name="gradle.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/snake-java/gradle.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+              <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -182,12 +331,12 @@
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
-                <option name="name" value=":snake" />
-                <option name="path" value="$PROJECT_DIR$/snake" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
                 <option name="name" value=":snake-android" />
                 <option name="path" value="$PROJECT_DIR$/snake-android" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value=":snake-java" />
+                <option name="path" value="$PROJECT_DIR$/snake-java" />
               </ExternalProjectPojo>
             </list>
           </value>
@@ -243,24 +392,24 @@
                 <option name="name" value="model" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Assembles a jar archive containing the main classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="jar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Creates a version of android.jar that's suitable for unit tests." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="mockableAndroidJar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Processes main resources." />
+                <option name="description" value="Assembles a jar archive containing the main classes." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="processResources" />
+                <option name="name" value="jar" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:appcompat-v7:25.3.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComAndroidSupportAppcompatV72531Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Displays the tasks runnable from root project 'snake' (some of the displayed tasks may belong to subprojects)." />
@@ -309,13 +458,13 @@
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processDebugResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Processes test resources." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="processTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="processDebugResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on all variants." />
@@ -428,26 +577,26 @@
                 <option name="name" value="transformResourcesWithMergeJavaResForReleaseUnitTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="preDebugAndroidTestBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Assembles test classes." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="testClasses" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="preDebugAndroidTestBuild" />
+                <option name="name" value="processDebugAndroidTestJavaRes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="processDebugAndroidTestJavaRes" />
+                <option name="name" value="processReleaseUnitTestJavaRes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Generates Javadoc API documentation for the main source code." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="javadoc" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="processReleaseUnitTestJavaRes" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Uninstalls the Release build." />
@@ -530,7 +679,7 @@
                 <option name="name" value="preReleaseBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Assembles the outputs of this project." />
+                <option name="description" value="Assembles all variants of all applications and secondary packages." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="assemble" />
               </ExternalTaskPojo>
@@ -700,13 +849,13 @@
                 <option name="name" value="transformResourcesWithMergeJavaResForDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Runs the unit tests." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="test" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareReleaseUnitTestDependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Run unit tests for all variants." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="test" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -721,14 +870,14 @@
                 <option name="name" value="preReleaseUnitTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Compiles main Java source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="compileJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:support-fragment:25.3.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComAndroidSupportSupportFragment2531Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -786,10 +935,6 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="snakeproperties" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileReleaseSources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
@@ -806,11 +951,11 @@
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="libs" />
+                <option name="name" value="compileReleaseAidl" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="compileReleaseAidl" />
+                <option name="name" value="libs" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support.test:runner:0.5" />
@@ -920,13 +1065,13 @@
                 <option name="name" value="clean" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="preDebugBuild" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Compiles test Java source." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileTestJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="preDebugBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -970,157 +1115,6 @@
               <ExternalTaskPojo>
                 <option name="description" value="Displays the properties of root project 'snake'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="properties" />
-              </ExternalTaskPojo>
-            </list>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/snake">
-          <value>
-            <list>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by project ':snake'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="components" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="buildDependents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of project ':snake'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="projects" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles main classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="classes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in project ':snake'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="dependentComponents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in project ':snake'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="buildEnvironment" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles test classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="testClasses" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Generates Javadoc API documentation for the main source code." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="javadoc" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="assets" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles a jar archive containing the main classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="jar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of project ':snake'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="model" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="scripts" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Processes main resources." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="processResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from project ':snake'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="tasks" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="zip" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs the unit tests." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="test" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Compiles main Java source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="compileJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in project ':snake'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="dependencyInsight" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all checks." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="check" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles the outputs of this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="assemble" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Deletes the build directory." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="clean" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Compiles test Java source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="compileTestJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in project ':snake'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="dependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Processes test resources." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="processTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays a help message." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="help" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="build" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects it depends on." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="buildNeeded" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="snakeproperties" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
-                <option name="name" value="libs" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of project ':snake'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
             </list>
@@ -1835,12 +1829,159 @@
             </list>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/snake-java">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by project ':snake-java'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of project ':snake-java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in project ':snake-java'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in project ':snake-java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles test classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="assets" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of project ':snake-java'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="scripts" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from project ':snake-java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="zip" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in project ':snake-java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles test Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in project ':snake-java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes test resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="libs" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of project ':snake-java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/snake-java" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$" value="3000978671364" />
-        <entry key="C:\Users\gabar\git\snake" value="6002036937315" />
+        <entry key="C:\Users\gabar\git\snake" value="6002303115478" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2126,6 +2267,98 @@
                       </ExternalModuleBuildClasspathPojo>
                     </value>
                   </entry>
+                  <entry key="$PROJECT_DIR$/snake-java">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle/2.3.3/gradle-2.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle/2.3.3/gradle-2.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle-core/2.3.3/gradle-core-2.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle-core/2.3.3/gradle-core-2.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder/2.3.3/builder-2.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder/2.3.3/builder-2.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint/25.3.3/lint-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint/25.3.3/lint-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/transform-api/2.0.0-deprecated-use-gradle-api/transform-api-2.0.0-deprecated-use-gradle-api.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle-api/2.3.3/gradle-api-2.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/gradle-api/2.3.3/gradle-api-2.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/databinding/compilerCommon/2.3.3/compilerCommon-2.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/databinding/compilerCommon/2.3.3/compilerCommon-2.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm/5.0.4/asm-5.0.4-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-commons/5.0.4/asm-commons-5.0.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-gradle/5.3.2/proguard-gradle-5.3.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jacoco/org.jacoco.core/0.7.5.201505241946/org.jacoco.core-0.7.5.201505241946.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/jacoco/org.jacoco.report/0.7.5.201505241946/org.jacoco.report-0.7.5.201505241946.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/protobuf/protobuf-java/3.0.0/protobuf-java-3.0.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder-model/2.3.3/builder-model-2.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder-model/2.3.3/builder-model-2.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder-test-api/2.3.3/builder-test-api-2.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/builder-test-api/2.3.3/builder-test-api-2.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/sdklib/25.3.3/sdklib-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/sdklib/25.3.3/sdklib-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/sdk-common/25.3.3/sdk-common-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/sdk-common/25.3.3/sdk-common-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/common/25.3.3/common-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/common/25.3.3/common-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/manifest-merger/25.3.3/manifest-merger-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/build/manifest-merger/25.3.3/manifest-merger-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/ddms/ddmlib/25.3.3/ddmlib-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/ddms/ddmlib/25.3.3/ddmlib-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/jack/jack-api/0.13.0/jack-api-0.13.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/jill/jill-api/0.10.0/jill-api-0.10.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/analytics-library/protos/25.3.3/protos-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/analytics-library/protos/25.3.3/protos-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/analytics-library/shared/25.3.3/shared-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/analytics-library/shared/25.3.3/shared-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/analytics-library/tracker/25.3.3/tracker-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/analytics-library/tracker/25.3.3/tracker-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/squareup/javawriter/2.5.0/javawriter-2.5.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcpkix-jdk15on/1.48/bcpkix-jdk15on-1.48.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/bouncycastle/bcprov-jdk15on/1.48/bcprov-jdk15on-1.48.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-tree/5.0.4/asm-tree-5.0.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint-checks/25.3.3/lint-checks-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint-checks/25.3.3/lint-checks-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/eclipse/jdt/core/compiler/ecj/4.6.1/ecj-4.6.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/guava/guava/18.0/guava-18.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/databinding/baseLibrary/2.3.3/baseLibrary-2.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/databinding/baseLibrary/2.3.3/baseLibrary-2.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/antlr/antlr4/4.5.3/antlr4-4.5.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-io/commons-io/2.4/commons-io-2.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/annotations/25.3.3/annotations-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/annotations/25.3.3/annotations-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/proguard/proguard-base/5.3.2/proguard-base-5.3.2.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-debug-all/5.0.1/asm-debug-all-5.0.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/layoutlib/layoutlib-api/25.3.3/layoutlib-api-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/layoutlib/layoutlib-api/25.3.3/layoutlib-api-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/dvlib/25.3.3/dvlib-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/dvlib/25.3.3/dvlib-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/repository/25.3.3/repository-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/repository/25.3.3/repository-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpclient/4.1.1/httpclient-4.1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpmime/4.1/httpmime-4.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint-api/25.3.3/lint-api-25.3.3-sources.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/lint/lint-api/25.3.3/lint-api-25.3.3.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/ow2/asm/asm-analysis/5.0.4/asm-analysis-5.0.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/google/jimfs/jimfs/1.1/jimfs-1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/apache/httpcomponents/httpcore/4.1/httpcore-4.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/commons-codec/commons-codec/1.4/commons-codec-1.4.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/com-intellij/uast/162.2228.14/uast-162.2228.14.jar" />
+                            <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$/snake-java" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
                 </map>
               </option>
               <option name="name" value="snake" />
@@ -2279,16 +2512,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/snake/build.gradle" />
         <option value="$PROJECT_DIR$/snake-android/.gitignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/snake-android/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/snake-android/settings.gradle" />
         <option value="$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/java/awt/Rectangle.class" />
-        <option value="$PROJECT_DIR$/snake-android/build.gradle" />
         <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+        <option value="$PROJECT_DIR$/gradle.properties" />
+        <option value="$PROJECT_DIR$/settings.gradle" />
+        <option value="$PROJECT_DIR$/snake/build.gradle" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/snake-java/build/resources/main/snake.properties" />
+        <option value="$PROJECT_DIR$/snake-java/gradle.properties" />
+        <option value="$PROJECT_DIR$/snake-android/gradle.properties" />
+        <option value="$PROJECT_DIR$/snake-android/build.gradle" />
+        <option value="$PROJECT_DIR$/snake-java/build.gradle" />
       </list>
     </option>
   </component>
@@ -2322,18 +2560,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2353,6 +2580,236 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake-java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake-java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake-java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake-java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake-java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake-java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake-java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake-java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake-java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reports" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2458,7 +2915,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2480,11 +2941,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="snake" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="AndroidView">
         <subPane />
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2494,21 +2980,23 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="gradle.compiler" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.proportion" value="0.15" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gabar\git\snake" />
+      <recent name="C:\Users\gabar\git\snake\snake-android" />
+      <recent name="C:\Users\gabar\git\snake\snake\src\main\resources" />
+      <recent name="C:\Users\gabar\git\snake\snake-android\src\main\assets\fonts" />
+      <recent name="C:\Users\gabar\git\snake\snake-android\src\main\res\font" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gabar\git\snake\snake" />
+      <recent name="C:\Users\gabar\git\snake\snake\src\main\resources" />
       <recent name="C:\Users\gabar\git\snake\snake-android\src\main\res\drawable" />
       <recent name="C:\Users\gabar\git\snake\snake\src" />
       <recent name="C:\Users\gabar\git\snake" />
-      <recent name="C:\Users\gabar\git\snake\snake" />
-      <recent name="C:\Users\gabar\git\snake\src\main\resources" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\gabar\git\snake\snake-android\src\main\assets\fonts" />
-      <recent name="C:\Users\gabar\git\snake\snake-android\src\main\res\font" />
-      <recent name="C:\Users\gabar\git\snake\snake-android\src\main\res\raw" />
-      <recent name="C:\Users\gabar\git\snake\snake-android\src\main\res\drawable" />
-      <recent name="C:\Users\gabar\git\snake\snake" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.snake-android">
@@ -2849,11 +3337,11 @@
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33187535" sideWeight="0.4978261" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33187535" sideWeight="0.45434782" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33187535" sideWeight="0.5021739" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33187535" sideWeight="0.54565215" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968834" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2861,8 +3349,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5157609" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968834" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37880436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2875,6 +3362,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968834" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2890,13 +3378,61 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setup resources and properties." />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup resources and properties." />
+    <MESSAGE value="Renamed snake-java and added properties file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed snake-java and added properties file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/SnakeViewImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/SnakeInstanceGridView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/java/awt/Rectangle.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2905,7 +3441,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snake/build.gradle">
+    <entry file="file://$PROJECT_DIR$/snake-java/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
@@ -2913,7 +3449,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snake/src/main/java/spypunk/snake/Main.java">
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
@@ -2925,7 +3461,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snake/src/main/resources/snake.properties">
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/resources/snake.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2973,7 +3509,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snake/build.gradle">
+    <entry file="file://$PROJECT_DIR$/snake-java/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
@@ -2981,7 +3517,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snake/src/main/java/spypunk/snake/Main.java">
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
@@ -2993,7 +3529,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snake/src/main/resources/snake.properties">
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/resources/snake.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -3051,7 +3587,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/build.gradle" />
     <entry file="file://$PROJECT_DIR$/src/main/settings.gradle" />
-    <entry file="file://$PROJECT_DIR$/snake/src/main/java/spypunk/snake/Main.java">
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
@@ -3060,14 +3596,6 @@
             <element signature="e#1383#1384#0" expanded="false" />
             <element signature="e#1429#1430#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snake/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3091,51 +3619,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snake-android/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snake/src/main/resources/snake.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snake/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeViewImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snake/src/main/java/spypunk/snake/ui/view/SnakeInstanceGridView.java">
+    <entry file="file://$PROJECT_DIR$/snake-android/settings.gradle" />
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/SnakeInstanceGridView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
@@ -3147,31 +3635,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="892" column="14" selection-start-line="892" selection-start-column="14" selection-end-line="892" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/java/awt/Rectangle.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="108">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snake-android/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3179,6 +3649,120 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/resources/snake.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake/src/main/resources/snake-gradle.properties" />
+    <entry file="file://$PROJECT_DIR$/snake.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/java/spypunk/snake/ui/view/SnakeViewImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2835">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake/build/resources/main/snake.properties" />
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/src/main/resources/snake.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/build/resources/main/snake.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/build/resources/main/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-android/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snake-java/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
           <folding />
         </state>
       </provider>

@@ -15,9 +15,9 @@ android {
         jackOptions {
             enabled true
         }
-        resValue "string", "NAME", rootProject.name
-        resValue "string", "VERSION", rootProject.version
-        resValue "string", "URL", "https://github.com/spypunk/snake"
+        resValue "string", "NAME", project.name
+        resValue "string", "VERSION", project.version
+        resValue "string", "URL", project.url
     }
     buildTypes {
         release {
