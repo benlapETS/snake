@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/snake.iml" filepath="$PROJECT_DIR$/snake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/snake-android/snake-android.iml" filepath="$PROJECT_DIR$/snake-android/snake-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/snake/snake-snake.iml" filepath="$PROJECT_DIR$/snake/snake-snake.iml" />
+    </modules>
+  </component>
+</project>

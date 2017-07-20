@@ -1,0 +1,2 @@
+include ':snake-android',':snake'
+rootProject.name = 'snake'
