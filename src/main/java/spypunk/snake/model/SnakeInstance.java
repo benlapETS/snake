@@ -9,12 +9,17 @@
 package spypunk.snake.model;
 
 import java.awt.Point;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import com.google.common.collect.Lists;
 
+import spypunk.snake.constants.SnakeConstants;
 import spypunk.snake.model.Food.Type;
 
 public class SnakeInstance {
@@ -29,7 +34,7 @@ public class SnakeInstance {
 
     private List<SnakeEvent> snakeEvents = Lists.newArrayList();
 
-    private List<Point> snakeParts;
+  private SnakePosition position;
 
     private Direction snakeDirection;
 
@@ -61,47 +66,15 @@ public class SnakeInstance {
         }
     }
 
-    public static final class Builder {
+  public SnakeInstance() {
+    this.speed = SnakeConstants.DEFAULT_SPEED;
+    this.state = State.RUNNING;
+    this.snakeDirection = Direction.DOWN;
+    this.position = new SnakePosition();
+    this.statistics = Arrays.stream(Type.values())
+        .collect(Collectors.toMap(Function.identity(), ft -> 0));
 
-        private final SnakeInstance snakeInstance = new SnakeInstance();
-
-        private Builder() {
-        }
-
-        public static Builder instance() {
-            return new Builder();
-        }
-
-        public Builder setState(final State state) {
-            snakeInstance.setState(state);
-            return this;
-        }
-
-        public Builder setSpeed(final int speed) {
-            snakeInstance.setSpeed(speed);
-            return this;
-        }
-
-        public Builder setSnakeParts(final List<Point> snakeParts) {
-            snakeInstance.setSnakeParts(snakeParts);
-            return this;
-        }
-
-        public Builder setSnakeDirection(final Direction direction) {
-            snakeInstance.setSnakeDirection(direction);
-            return this;
-        }
-
-        public Builder setStatistics(final Map<Type, Integer> statistics) {
-            snakeInstance.setStatistics(statistics);
-            return this;
-        }
-
-        public SnakeInstance build() {
-            return snakeInstance;
-        }
-
-    }
+  }
 
     public int getScore() {
         return score;
@@ -143,12 +116,12 @@ public class SnakeInstance {
         currentMovementFrame = currentMoveFrame;
     }
 
-    public List<Point> getSnakeParts() {
-        return snakeParts;
-    }
+  public List<Point> getSnakeParts() {
+    return new ArrayList<Point>(position.getParts());
+  }
 
-    public void setSnakeParts(final List<Point> snakeParts) {
-        this.snakeParts = snakeParts;
+  public void setPosition(final SnakePosition newPosition) {
+        this.position = newPosition;
     }
 
     public Direction getSnakeDirection() {
@@ -190,4 +163,20 @@ public class SnakeInstance {
     public void setStatistics(final Map<Type, Integer> statistics) {
         this.statistics = statistics;
     }
+
+  public void moveTo(Point newLocation) {
+    position.updateTo(newLocation);
+  }
+
+  public boolean hasEatenFood() {
+    return food.isAt(position.getHeadLocation());
+  }
+
+  public void grow() {
+    position.expand();
+  }
+
+  public Point getHead() {
+    return position.getHeadLocation();
+  }
 }

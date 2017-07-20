@@ -32,36 +32,15 @@ import spypunk.snake.model.SnakeInstance.State;
 
 @Singleton
 public class SnakeInstanceServiceImpl implements SnakeInstanceService {
-
   private static final int BONUS_FOOD_RANDOM = 10;
-
   private static final int BONUS_FOOD_FRAME_LIMIT = 120;
-
   private final List<Point> gridLocations = createGridLocations();
-
   private final Random random = new Random();
 
   @Override
   public void create(final Snake snake) {
-    final List<Point> snakeParts = Lists.newArrayList();
-
-    final int x = SnakeConstants.WIDTH / 2;
-
-    snakeParts.add(new Point(x, 2));
-    snakeParts.add(new Point(x, 1));
-    snakeParts.add(new Point(x, 0));
-
-    final Map<Type, Integer> statistics = Lists.newArrayList(Type.values())
-        .stream()
-        .collect(Collectors.toMap(foodType -> foodType, foodType -> 0));
-
-    final SnakeInstance snakeInstance = SnakeInstance.Builder.instance()
-        .setSpeed(SnakeConstants.DEFAULT_SPEED).setState(State.RUNNING)
-        .setSnakeDirection(Direction.DOWN).setSnakeParts(snakeParts)
-        .setStatistics(statistics).build();
-
+    final SnakeInstance snakeInstance = new SnakeInstance();
     getNextFood(snakeInstance);
-
     snake.setSnakeInstance(snakeInstance);
   }
 
@@ -164,44 +143,33 @@ public class SnakeInstanceServiceImpl implements SnakeInstanceService {
 
   private void moveSnake(final SnakeInstance snakeInstance) {
     final Point newLocation = getSnakeHeadPartNextLocation(snakeInstance);
-    final List<Point> snakeParts = snakeInstance.getSnakeParts();
-    final List<Point> newSnakeParts = Lists.newArrayList();
+    snakeInstance.moveTo(newLocation);
 
-    newSnakeParts.add(newLocation);
-    newSnakeParts.addAll(snakeParts.subList(0, snakeParts.size() - 1));
-
-    snakeInstance.setSnakeParts(newSnakeParts);
-
-    final Food food = snakeInstance.getFood();
-    final Type foodType = food.getType();
-
-    if (food.getLocation().equals(newLocation)) {
-      newSnakeParts.add(snakeParts.get(snakeParts.size() - 1));
-      updateScore(snakeInstance, foodType);
-      updateStatistics(snakeInstance, foodType);
+    if (snakeInstance.hasEatenFood()) {
+      snakeInstance.grow();
+      updateScore(snakeInstance);
+      updateStatistics(snakeInstance);
       snakeInstance.getSnakeEvents().add(SnakeEvent.FOOD_EATEN);
       getNextFood(snakeInstance);
     }
   }
 
-  private void updateStatistics(final SnakeInstance snakeInstance,
-      final Type foodType) {
+  private void updateStatistics(final SnakeInstance snakeInstance) {
+    Type foodType = snakeInstance.getFood().getType();
     final Map<Type, Integer> statistics = snakeInstance.getStatistics();
     final Integer foodTypeCount = statistics.get(foodType);
     statistics.put(foodType, foodTypeCount + 1);
   }
 
-  private void updateScore(final SnakeInstance snakeInstance,
-      final Type foodType) {
-    snakeInstance.setScore(snakeInstance.getScore() + foodType.getPoints());
+  private void updateScore(final SnakeInstance snakeInstance) {
+    int points = snakeInstance.getFood().getType().getPoints();
+    snakeInstance.setScore(snakeInstance.getScore() + points);
   }
 
   private Point
       getSnakeHeadPartNextLocation(final SnakeInstance snakeInstance) {
-    final List<Point> snakeParts = snakeInstance.getSnakeParts();
-    final Point snakeHeadPart = snakeParts.get(0);
+    final Point snakeHeadPart = snakeInstance.getHead();
     final Direction direction = snakeInstance.getSnakeDirection();
-
     return direction.apply(snakeHeadPart);
   }
 

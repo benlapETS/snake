@@ -74,4 +74,8 @@ public class Food {
     public void setType(final Type type) {
         this.type = type;
     }
+
+  public boolean isAt(Point otherLocation) {
+    return location.equals(otherLocation);
+  }
 }
