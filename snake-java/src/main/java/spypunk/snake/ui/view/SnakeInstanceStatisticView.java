@@ -20,12 +20,12 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
 
-import spypunk.snake.model.Food.Type;
+import spypunk.snake.model.Type;
 import spypunk.snake.model.Snake;
-import spypunk.snake.model.SnakeInstance;
-import spypunk.snake.ui.cache.ImageCache;
+import spypunk.snake.model.SnakeInstanceImpl;
+import spypunk.snake.ui.cache.SnakeImageCache;
 import spypunk.snake.ui.font.FontType;
-import spypunk.snake.ui.font.cache.FontCache;
+import spypunk.snake.ui.font.cache.SnakeFontCache;
 import spypunk.snake.ui.util.SwingUtils;
 
 public class SnakeInstanceStatisticView extends AbstractSnakeInstanceView {
@@ -44,11 +44,11 @@ public class SnakeInstanceStatisticView extends AbstractSnakeInstanceView {
 
     private final Image foodImage;
 
-    public SnakeInstanceStatisticView(final FontCache fontCache, final ImageCache imageCache,
-            final Snake snake, final Type foodType) {
+    public SnakeInstanceStatisticView(final SnakeFontCache fontCache, final SnakeImageCache snakeImageCache,
+                                      final Snake snake, final Type foodType) {
         this.snake = snake;
         this.foodType = foodType;
-        foodImage = imageCache.getFoodImage(foodType);
+        foodImage = snakeImageCache.getFoodImage(foodType);
 
         defaultFont = fontCache.getFont(FontType.DEFAULT);
 
@@ -68,7 +68,7 @@ public class SnakeInstanceStatisticView extends AbstractSnakeInstanceView {
     }
 
     private void renderStatistic(final Graphics2D graphics) {
-        final SnakeInstance snakeInstance = snake.getSnakeInstance();
+        final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
 
         final String count = snakeInstance == null ? "0" : String.valueOf(snakeInstance.getStatistics().get(foodType));
 

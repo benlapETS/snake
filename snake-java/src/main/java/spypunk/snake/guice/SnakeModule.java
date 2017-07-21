@@ -20,8 +20,8 @@ import spypunk.snake.sound.cache.SoundClipCache;
 import spypunk.snake.sound.cache.SoundClipCacheImpl;
 import spypunk.snake.sound.service.SoundService;
 import spypunk.snake.sound.service.SoundServiceImpl;
-import spypunk.snake.ui.cache.ImageCache;
-import spypunk.snake.ui.cache.ImageCacheImpl;
+import spypunk.snake.ui.cache.SnakeImageCache;
+import spypunk.snake.ui.cache.SnakeImageCacheImpl;
 import spypunk.snake.ui.controller.SnakeController;
 import spypunk.snake.ui.controller.SnakeControllerImpl;
 import spypunk.snake.ui.controller.event.SnakeControllerSnakeEventHandler;
@@ -32,8 +32,8 @@ import spypunk.snake.ui.factory.SnakeControllerCommandFactory;
 import spypunk.snake.ui.factory.SnakeControllerCommandFactoryImpl;
 import spypunk.snake.ui.factory.SnakeViewFactory;
 import spypunk.snake.ui.factory.SnakeViewFactoryImpl;
-import spypunk.snake.ui.font.cache.FontCache;
-import spypunk.snake.ui.font.cache.FontCacheImpl;
+import spypunk.snake.ui.font.cache.SnakeFontCache;
+import spypunk.snake.ui.font.cache.SnakeFontCacheImpl;
 
 public class SnakeModule extends AbstractModule {
 
@@ -42,9 +42,9 @@ public class SnakeModule extends AbstractModule {
         bind(SnakeInstanceService.class).to(SnakeInstanceServiceImpl.class);
         bind(SnakeController.class).to(SnakeControllerImpl.class);
         bind(SnakeViewFactory.class).to(SnakeViewFactoryImpl.class);
-        bind(ImageCache.class).to(ImageCacheImpl.class);
+        bind(SnakeImageCache.class).to(SnakeImageCacheImpl.class);
         bind(SnakeFactory.class).to(SnakeFactoryImpl.class);
-        bind(FontCache.class).to(FontCacheImpl.class);
+        bind(SnakeFontCache.class).to(SnakeFontCacheImpl.class);
         bind(SnakeControllerCommandFactory.class).to(SnakeControllerCommandFactoryImpl.class);
         bind(SoundService.class).to(SoundServiceImpl.class);
         bind(SoundClipCache.class).to(SoundClipCacheImpl.class);

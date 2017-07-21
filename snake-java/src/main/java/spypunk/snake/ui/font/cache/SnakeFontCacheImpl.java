@@ -27,9 +27,9 @@ import spypunk.snake.exception.SnakeException;
 import spypunk.snake.ui.font.FontType;
 
 @Singleton
-public class FontCacheImpl implements FontCache {
+public class SnakeFontCacheImpl implements SnakeFontCache {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(FontCacheImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SnakeFontCacheImpl.class);
 
     private static final String FONTS_FOLDER = "/font/".intern();
 
@@ -43,7 +43,7 @@ public class FontCacheImpl implements FontCache {
     private static Font createFont(final FontType fontType) {
         final String resourceName = String.format("%s%s", FONTS_FOLDER, fontType.getFileName());
 
-        try (InputStream inputStream = FontCacheImpl.class.getResourceAsStream(resourceName)) {
+        try (InputStream inputStream = SnakeFontCacheImpl.class.getResourceAsStream(resourceName)) {
             return Font.createFont(Font.TRUETYPE_FONT, inputStream).deriveFont(fontType.getSize());
         } catch (FontFormatException | IOException e) {
             LOGGER.error(e.getMessage(), e);
@@ -53,6 +53,6 @@ public class FontCacheImpl implements FontCache {
 
     private static Map<FontType, Font> createFonts() {
         return Lists.newArrayList(FontType.values()).stream()
-                .collect(Collectors.toMap(Function.identity(), FontCacheImpl::createFont));
+                .collect(Collectors.toMap(Function.identity(), SnakeFontCacheImpl::createFont));
     }
 }

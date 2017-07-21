@@ -8,17 +8,17 @@
 
 package spypunk.snake.service;
 
-import spypunk.snake.model.Direction;
+import spypunk.snake.model.SnakeDirection;
 import spypunk.snake.model.Snake;
-import spypunk.snake.model.SnakeInstance;
+import spypunk.snake.model.SnakeInstanceImpl;
 
 public interface SnakeInstanceService {
 
     void create(Snake snake);
 
-    void update(SnakeInstance snakeInstance);
+    void update(SnakeInstanceImpl snakeInstance);
 
-    void updateDirection(SnakeInstance snakeInstance, Direction direction);
+    void updateDirection(SnakeInstanceImpl snakeInstance, SnakeDirection direction);
 
-    void pause(SnakeInstance snakeInstance);
+    void pause(SnakeInstanceImpl snakeInstance);
 }

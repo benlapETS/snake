@@ -28,12 +28,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
-import spypunk.snake.model.Food.Type;
+import spypunk.snake.model.Type;
 import spypunk.snake.model.Snake;
-import spypunk.snake.ui.cache.ImageCache;
+import spypunk.snake.ui.cache.SnakeImageCache;
 import spypunk.snake.ui.controller.SnakeController;
 import spypunk.snake.ui.font.FontType;
-import spypunk.snake.ui.font.cache.FontCache;
+import spypunk.snake.ui.font.cache.SnakeFontCache;
 import spypunk.snake.ui.icon.Icon;
 import spypunk.snake.ui.util.SwingUtils;
 
@@ -115,16 +115,16 @@ public class SnakeViewImpl implements SnakeView {
     }
 
     public SnakeViewImpl(final SnakeController snakeController,
-            final FontCache fontCache,
-            final ImageCache imageCache,
+            final SnakeFontCache fontCache,
+            final SnakeImageCache snakeImageCache,
             final Snake snake) {
-        snakeInstanceGridView = new SnakeInstanceGridView(fontCache, imageCache, snake);
+        snakeInstanceGridView = new SnakeInstanceGridView(fontCache, snakeImageCache, snake);
         snakeInstanceScoreView = new SnakeInstanceScoreView(fontCache, snake);
-        snakeInstanceNormalStatisticView = new SnakeInstanceStatisticView(fontCache, imageCache, snake, Type.NORMAL);
-        snakeInstanceBonusStatisticView = new SnakeInstanceStatisticView(fontCache, imageCache, snake, Type.BONUS);
+        snakeInstanceNormalStatisticView = new SnakeInstanceStatisticView(fontCache, snakeImageCache, snake, Type.NORMAL);
+        snakeInstanceBonusStatisticView = new SnakeInstanceStatisticView(fontCache, snakeImageCache, snake, Type.BONUS);
 
-        muteImageIcon = new ImageIcon(imageCache.getIcon(Icon.MUTE));
-        unmuteImageIcon = new ImageIcon(imageCache.getIcon(Icon.UNMUTE));
+        muteImageIcon = new ImageIcon(snakeImageCache.getIcon(Icon.MUTE));
+        unmuteImageIcon = new ImageIcon(snakeImageCache.getIcon(Icon.UNMUTE));
 
         final URI projectURI = snake.getProjectURI();
 
@@ -170,7 +170,7 @@ public class SnakeViewImpl implements SnakeView {
         frame.setResizable(false);
         frame.addWindowListener(new SnakeViewWindowListener(snakeController));
         frame.addKeyListener(new SnakeViewKeyAdapter(snakeController));
-        frame.setIconImage(imageCache.getIcon(Icon.ICON));
+        frame.setIconImage(snakeImageCache.getIcon(Icon.ICON));
 
         frame.add(topPanel, BorderLayout.NORTH);
         frame.add(centerPanel, BorderLayout.CENTER);

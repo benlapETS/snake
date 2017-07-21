@@ -8,34 +8,19 @@
 
 package spypunk.snake.sound;
 
-import javax.sound.sampled.spi.AudioFileReader;
-
-import javazoom.spi.mpeg.sampled.file.MpegAudioFileReader;
-
 public enum Sound {
 
-    BACKGROUND(Format.MP3, true),
-    GAME_OVER(Format.MP3, true),
-    FOOD_EATEN(Format.MP3, false);
-
-    public enum Format {
-        MP3 {
-            @Override
-            public AudioFileReader getFileReader() {
-                return new MpegAudioFileReader();
-            }
-        };
-
-        public abstract AudioFileReader getFileReader();
-    }
+    BACKGROUND(SnakeFormat.MP3, true),
+    GAME_OVER(SnakeFormat.MP3, true),
+    FOOD_EATEN(SnakeFormat.MP3, false);
 
     private final String fileName;
 
-    private final Format format;
+    private final SnakeFormat format;
 
     private final boolean loop;
 
-    Sound(final Format format, final boolean loop) {
+    Sound(final SnakeFormat format, final boolean loop) {
         fileName = name().toLowerCase() + "." + format.name().toLowerCase();
         this.format = format;
         this.loop = loop;
@@ -45,7 +30,7 @@ public enum Sound {
         return fileName;
     }
 
-    public Format getFormat() {
+    public SnakeFormat getFormat() {
         return format;
     }
 

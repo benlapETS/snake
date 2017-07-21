@@ -24,14 +24,14 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.Lists;
 
 import spypunk.snake.exception.SnakeException;
-import spypunk.snake.model.Food.Type;
+import spypunk.snake.model.Type;
 import spypunk.snake.ui.icon.Icon;
 import spypunk.snake.ui.snakepart.SnakePart;
 
 @Singleton
-public class ImageCacheImpl implements ImageCache {
+public class SnakeImageCacheImpl implements SnakeImageCache {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ImageCacheImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SnakeImageCacheImpl.class);
 
     private static final String IMAGE_FILE_PATTERN = "%s%s.png".intern();
 
@@ -77,7 +77,7 @@ public class ImageCacheImpl implements ImageCache {
     private static Image createImage(final String imageFolder, final String fileName) {
         final String resourceName = String.format(IMAGE_FILE_PATTERN, imageFolder, fileName);
 
-        try (InputStream inputStream = ImageCacheImpl.class.getResourceAsStream(resourceName)) {
+        try (InputStream inputStream = SnakeImageCacheImpl.class.getResourceAsStream(resourceName)) {
             return ImageIO.read(inputStream);
         } catch (final IOException e) {
             LOGGER.error(e.getMessage(), e);
@@ -87,16 +87,16 @@ public class ImageCacheImpl implements ImageCache {
 
     private static Map<Icon, Image> createIcons() {
         return Lists.newArrayList(Icon.values()).stream().collect(Collectors.toMap(Function.identity(),
-            ImageCacheImpl::createIcon));
+            SnakeImageCacheImpl::createIcon));
     }
 
     private static Map<SnakePart, Image> createSnakesImages() {
         return Lists.newArrayList(SnakePart.values()).stream().collect(Collectors.toMap(Function.identity(),
-            ImageCacheImpl::createSnakeImage));
+            SnakeImageCacheImpl::createSnakeImage));
     }
 
     private static Map<Type, Image> createFoodImages() {
         return Lists.newArrayList(Type.values()).stream().collect(Collectors.toMap(Function.identity(),
-            ImageCacheImpl::createFoodImage));
+            SnakeImageCacheImpl::createFoodImage));
     }
 }

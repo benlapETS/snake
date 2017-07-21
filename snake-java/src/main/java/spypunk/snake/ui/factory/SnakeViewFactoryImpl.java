@@ -12,9 +12,9 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import spypunk.snake.model.Snake;
-import spypunk.snake.ui.cache.ImageCache;
+import spypunk.snake.ui.cache.SnakeImageCache;
 import spypunk.snake.ui.controller.SnakeController;
-import spypunk.snake.ui.font.cache.FontCache;
+import spypunk.snake.ui.font.cache.SnakeFontCache;
 import spypunk.snake.ui.view.SnakeView;
 import spypunk.snake.ui.view.SnakeViewImpl;
 
@@ -23,20 +23,20 @@ public class SnakeViewFactoryImpl implements SnakeViewFactory {
 
     private final SnakeController snakeController;
 
-    private final FontCache fontCache;
+    private final SnakeFontCache fontCache;
 
-    private final ImageCache imageCache;
+    private final SnakeImageCache snakeImageCache;
 
     @Inject
-    public SnakeViewFactoryImpl(final SnakeController snakeController, final FontCache fontCache,
-            final ImageCache imageCache) {
+    public SnakeViewFactoryImpl(final SnakeController snakeController, final SnakeFontCache fontCache,
+            final SnakeImageCache snakeImageCache) {
         this.snakeController = snakeController;
         this.fontCache = fontCache;
-        this.imageCache = imageCache;
+        this.snakeImageCache = snakeImageCache;
     }
 
     @Override
     public SnakeView createsnakeView(final Snake snake) {
-        return new SnakeViewImpl(snakeController, fontCache, imageCache, snake);
+        return new SnakeViewImpl(snakeController, fontCache, snakeImageCache, snake);
     }
 }

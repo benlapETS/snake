@@ -11,9 +11,9 @@ package spypunk.snake.ui.factory;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import spypunk.snake.model.Direction;
-import spypunk.snake.model.SnakeInstance;
-import spypunk.snake.model.SnakeInstance.State;
+import spypunk.snake.model.SnakeDirection;
+import spypunk.snake.model.SnakeInstanceImpl;
+import spypunk.snake.model.State;
 import spypunk.snake.service.SnakeInstanceService;
 import spypunk.snake.sound.Sound;
 import spypunk.snake.sound.service.SoundService;
@@ -50,7 +50,7 @@ public class SnakeControllerCommandFactoryImpl implements SnakeControllerCommand
     @Override
     public SnakeControllerCommand createPauseSnakeControllerCommand() {
         return snake -> {
-            final SnakeInstance snakeInstance = snake.getSnakeInstance();
+            final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
 
             if (snakeInstance != null) {
                 snakeInstanceService.pause(snakeInstance);
@@ -65,9 +65,9 @@ public class SnakeControllerCommandFactoryImpl implements SnakeControllerCommand
     }
 
     @Override
-    public SnakeControllerCommand createDirectionSnakeControllerCommand(final Direction direction) {
+    public SnakeControllerCommand createDirectionSnakeControllerCommand(final SnakeDirection direction) {
         return snake -> {
-            final SnakeInstance snakeInstance = snake.getSnakeInstance();
+            final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
 
             if (snakeInstance != null) {
                 snakeInstanceService.updateDirection(snake.getSnakeInstance(), direction);

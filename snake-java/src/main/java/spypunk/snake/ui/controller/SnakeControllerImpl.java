@@ -20,7 +20,7 @@ import spypunk.snake.controller.gameloop.SnakeControllerGameLoop;
 import spypunk.snake.factory.SnakeFactory;
 import spypunk.snake.model.Snake;
 import spypunk.snake.model.SnakeEvent;
-import spypunk.snake.model.SnakeInstance;
+import spypunk.snake.model.SnakeInstanceImpl;
 import spypunk.snake.service.SnakeInstanceService;
 import spypunk.snake.ui.controller.command.SnakeControllerCommand;
 import spypunk.snake.ui.controller.event.SnakeControllerSnakeEventHandler;
@@ -82,7 +82,7 @@ public class SnakeControllerImpl implements SnakeController {
 
         snakeControllerInputHandler.reset();
 
-        final SnakeInstance snakeInstance = snake.getSnakeInstance();
+        final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
 
         if (snakeInstance != null) {
             snakeInstanceService.update(snakeInstance);

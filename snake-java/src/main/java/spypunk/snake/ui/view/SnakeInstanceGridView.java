@@ -27,14 +27,14 @@ import javax.swing.ImageIcon;
 import com.google.common.collect.Maps;
 
 import spypunk.snake.constants.SnakeConstants;
-import spypunk.snake.model.Direction;
-import spypunk.snake.model.Food;
+import spypunk.snake.model.SnakeDirection;
+import spypunk.snake.model.SnakeFood;
 import spypunk.snake.model.Snake;
-import spypunk.snake.model.SnakeInstance;
-import spypunk.snake.model.SnakeInstance.State;
-import spypunk.snake.ui.cache.ImageCache;
+import spypunk.snake.model.SnakeInstanceImpl;
+import spypunk.snake.model.State;
+import spypunk.snake.ui.cache.SnakeImageCache;
 import spypunk.snake.ui.font.FontType;
-import spypunk.snake.ui.font.cache.FontCache;
+import spypunk.snake.ui.font.cache.SnakeFontCache;
 import spypunk.snake.ui.snakepart.SnakePart;
 import spypunk.snake.ui.util.SwingUtils;
 
@@ -54,7 +54,7 @@ public class SnakeInstanceGridView extends AbstractSnakeInstanceView {
 
     private final Rectangle frozenGridRectangle;
 
-    private final ImageCache imageCache;
+    private final SnakeImageCache snakeImageCache;
 
     private final Font frozenFont;
 
@@ -64,10 +64,10 @@ public class SnakeInstanceGridView extends AbstractSnakeInstanceView {
 
     private final Map<Point, Rectangle> rectanglesCache = Maps.newHashMap();
 
-    public SnakeInstanceGridView(final FontCache fontCache,
-            final ImageCache imageCache,
+    public SnakeInstanceGridView(final SnakeFontCache fontCache,
+            final SnakeImageCache snakeImageCache,
             final Snake snake) {
-        this.imageCache = imageCache;
+        this.snakeImageCache = snakeImageCache;
         this.snake = snake;
 
         frozenFont = fontCache.getFont(FontType.FROZEN);
@@ -95,7 +95,7 @@ public class SnakeInstanceGridView extends AbstractSnakeInstanceView {
     }
 
     private void renderSnake(final Graphics2D graphics) {
-        final SnakeInstance snakeInstance = snake.getSnakeInstance();
+        final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
 
         graphics.setColor(DEFAULT_BORDER_COLOR);
 
@@ -123,8 +123,8 @@ public class SnakeInstanceGridView extends AbstractSnakeInstanceView {
         }
     }
 
-    private SnakePart getSnakePart(final SnakeInstance snakeInstance, final int i) {
-        final Direction snakeDirection = snakeInstance.getSnakeDirection();
+    private SnakePart getSnakePart(final SnakeInstanceImpl snakeInstance, final int i) {
+        final SnakeDirection snakeDirection = snakeInstance.getSnakeDirection();
 
         if (i == 0) {
             return getSnakeHeadPart(snakeDirection);
@@ -180,7 +180,7 @@ public class SnakeInstanceGridView extends AbstractSnakeInstanceView {
         return SnakePart.TOP_LEFT;
     }
 
-    private SnakePart getSnakeHeadPart(final Direction snakeDirection) {
+    private SnakePart getSnakeHeadPart(final SnakeDirection snakeDirection) {
         switch (snakeDirection) {
         case DOWN:
             return SnakePart.HEAD_BOTTOM;
@@ -196,16 +196,16 @@ public class SnakeInstanceGridView extends AbstractSnakeInstanceView {
         }
     }
 
-    private void renderFood(final Graphics2D graphics, final SnakeInstance snakeInstance) {
-        final Food food = snakeInstance.getFood();
-        final Image foodImage = imageCache.getFoodImage(food.getType());
+    private void renderFood(final Graphics2D graphics, final SnakeInstanceImpl snakeInstance) {
+        final SnakeFood food = snakeInstance.getFood();
+        final Image foodImage = snakeImageCache.getFoodImage(food.getType());
         final Rectangle rectangle = getRectangle(food.getLocation());
 
         SwingUtils.drawImage(graphics, foodImage, rectangle);
     }
 
     private void renderSnakePart(final Graphics2D graphics, final Point location, final SnakePart snakePart) {
-        final Image snakeImage = imageCache.getSnakeImage(snakePart);
+        final Image snakeImage = snakeImageCache.getSnakeImage(snakePart);
         final Rectangle rectangle = getRectangle(location);
 
         SwingUtils.drawImage(graphics, snakeImage, rectangle);

@@ -19,13 +19,13 @@ import java.util.stream.IntStream;
 import javax.inject.Singleton;
 
 import spypunk.snake.constants.SnakeConstants;
-import spypunk.snake.model.Direction;
-import spypunk.snake.model.Food;
-import spypunk.snake.model.Food.Type;
+import spypunk.snake.model.SnakeDirection;
+import spypunk.snake.model.SnakeFood;
+import spypunk.snake.model.Type;
 import spypunk.snake.model.Snake;
 import spypunk.snake.model.SnakeEvent;
-import spypunk.snake.model.SnakeInstance;
-import spypunk.snake.model.SnakeInstance.State;
+import spypunk.snake.model.SnakeInstanceImpl;
+import spypunk.snake.model.State;
 
 @Singleton
 public class SnakeInstanceServiceImpl implements SnakeInstanceService {
@@ -35,13 +35,13 @@ public class SnakeInstanceServiceImpl implements SnakeInstanceService {
 
   @Override
   public void create(final Snake snake) {
-    final SnakeInstance snakeInstance = new SnakeInstance();
+    final SnakeInstanceImpl snakeInstance = new SnakeInstanceImpl();
     snakeInstance.produceNewFood(new ArrayList<Point>(gridLocations));
     snake.setSnakeInstance(snakeInstance);
   }
 
   @Override
-  public void update(final SnakeInstance snakeInstance) {
+  public void update(final SnakeInstanceImpl snakeInstance) {
     snakeInstance.clearSnakeEvents();
     if (!snakeInstance.isAt(State.RUNNING)) {
       return;
@@ -52,13 +52,13 @@ public class SnakeInstanceServiceImpl implements SnakeInstanceService {
   }
 
   @Override
-  public void pause(final SnakeInstance snakeInstance) {
+  public void pause(final SnakeInstanceImpl snakeInstance) {
     snakeInstance.togglePause();
   }
 
   @Override
-  public void updateDirection(final SnakeInstance snakeInstance,
-      final Direction direction) {
+  public void updateDirection(final SnakeInstanceImpl snakeInstance,
+      final SnakeDirection direction) {
     if (snakeInstance.isAt(State.RUNNING)) {
       snakeInstance.setNewSnakeDirection(Optional.of(direction));
     }
@@ -71,7 +71,7 @@ public class SnakeInstanceServiceImpl implements SnakeInstanceService {
         .flatMap(Collection::stream).collect(Collectors.toList());
   }
 
-  private void handleMovement(final SnakeInstance snakeInstance) {
+  private void handleMovement(final SnakeInstanceImpl snakeInstance) {
     if (!snakeInstance.canHandleMovement()) {
       return;
     }
@@ -88,8 +88,8 @@ public class SnakeInstanceServiceImpl implements SnakeInstanceService {
     snakeInstance.resetCurrentMovementFrame();
   }
 
-  private void handleBonusFood(final SnakeInstance snakeInstance) {
-    final Food food = snakeInstance.getFood();
+  private void handleBonusFood(final SnakeInstanceImpl snakeInstance) {
+    final SnakeFood food = snakeInstance.getFood();
     final Type foodType = food.getType();
 
     if (Type.BONUS.equals(foodType)
@@ -98,8 +98,8 @@ public class SnakeInstanceServiceImpl implements SnakeInstanceService {
     }
   }
 
-  private void handleDirection(final SnakeInstance snakeInstance) {
-    final Optional<Direction> newSnakeDirection = snakeInstance
+  private void handleDirection(final SnakeInstanceImpl snakeInstance) {
+    final Optional<SnakeDirection> newSnakeDirection = snakeInstance
         .getNewSnakeDirection();
 
     if (!newSnakeDirection.isPresent()) {

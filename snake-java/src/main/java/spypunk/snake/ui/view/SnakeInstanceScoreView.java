@@ -20,9 +20,9 @@ import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
 import spypunk.snake.model.Snake;
-import spypunk.snake.model.SnakeInstance;
+import spypunk.snake.model.SnakeInstanceImpl;
 import spypunk.snake.ui.font.FontType;
-import spypunk.snake.ui.font.cache.FontCache;
+import spypunk.snake.ui.font.cache.SnakeFontCache;
 import spypunk.snake.ui.util.SwingUtils;
 
 public class SnakeInstanceScoreView extends AbstractSnakeInstanceView {
@@ -37,7 +37,7 @@ public class SnakeInstanceScoreView extends AbstractSnakeInstanceView {
 
     private final Snake snake;
 
-    public SnakeInstanceScoreView(final FontCache fontCache,
+    public SnakeInstanceScoreView(final SnakeFontCache fontCache,
             final Snake snake) {
         this.snake = snake;
 
@@ -58,7 +58,7 @@ public class SnakeInstanceScoreView extends AbstractSnakeInstanceView {
     }
 
     private void renderScore(final Graphics2D graphics) {
-        final SnakeInstance snakeInstance = snake.getSnakeInstance();
+        final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
 
         final String score = snakeInstance == null ? EMPTY_STRING : String.valueOf(snakeInstance.getScore());
 

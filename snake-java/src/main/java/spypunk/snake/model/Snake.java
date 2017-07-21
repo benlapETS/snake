@@ -18,7 +18,7 @@ public class Snake {
 
     private URI projectURI;
 
-    private SnakeInstance snakeInstance;
+    private SnakeInstanceImpl snakeInstance;
 
     public static final class Builder {
 
@@ -76,11 +76,11 @@ public class Snake {
         this.projectURI = projectURI;
     }
 
-    public SnakeInstance getSnakeInstance() {
+    public SnakeInstanceImpl getSnakeInstance() {
         return snakeInstance;
     }
 
-    public void setSnakeInstance(final SnakeInstance snakeInstance) {
+    public void setSnakeInstance(final SnakeInstanceImpl snakeInstance) {
         this.snakeInstance = snakeInstance;
     }
 }

@@ -13,7 +13,7 @@ import spypunk.snake.constants.SnakeConstants;
  * @author bened
  *
  */
-public class SnakePosition {
+public class SnakePosition implements Position<Point>{
   private Deque<Point> snakeParts;
   private Point lastPartRemoved;
 

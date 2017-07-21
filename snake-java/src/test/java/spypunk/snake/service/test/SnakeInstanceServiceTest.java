@@ -17,10 +17,11 @@ import org.junit.Test;
 import spypunk.snake.constants.SnakeConstants;
 import spypunk.snake.factory.SnakeFactory;
 import spypunk.snake.factory.SnakeFactoryImpl;
-import spypunk.snake.model.Direction;
-import spypunk.snake.model.Food;
+import spypunk.snake.model.SnakeDirection;
 import spypunk.snake.model.Snake;
-import spypunk.snake.model.SnakeInstance.State;
+import spypunk.snake.model.SnakeInstanceImpl;
+import spypunk.snake.model.State;
+import spypunk.snake.model.Type;
 import spypunk.snake.service.SnakeInstanceServiceImpl;
 
 /**
@@ -64,7 +65,7 @@ public class SnakeInstanceServiceTest {
    */
   @Test
   public void testInitialDirection() {
-    assertEquals(Direction.DOWN, snake.getSnakeInstance().getSnakeDirection());
+    assertEquals(SnakeDirection.DOWN, snake.getSnakeInstance().getSnakeDirection());
   }
 
   /**
@@ -97,9 +98,9 @@ public class SnakeInstanceServiceTest {
   @Test
   public void testInitialStatistics() {
     assertEquals(0, snake.getSnakeInstance().getStatistics()
-        .get(Food.Type.NORMAL).intValue());
+        .get(Type.NORMAL).intValue());
     assertEquals(0, snake.getSnakeInstance().getStatistics()
-        .get(Food.Type.BONUS).intValue());
+        .get(Type.BONUS).intValue());
   }
 
   /**
@@ -120,7 +121,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(spypunk.snake.model.SnakeInstance)}.
+   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(SnakeInstanceImpl)}.
    */
   @Test
   public void testUpdateFrame() {
@@ -137,7 +138,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(spypunk.snake.model.SnakeInstance)}.
+   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(SnakeInstanceImpl)}.
    */
   @Test
   public void testNotTimeToHandleMovement() {
@@ -148,7 +149,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(spypunk.snake.model.SnakeInstance)}.
+   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(SnakeInstanceImpl)}.
    */
   @Test
   public void testTimeToHandleMovement() {
@@ -161,17 +162,17 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(spypunk.snake.model.SnakeInstance)}.
+   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(SnakeInstanceImpl)}.
    */
   @Test
   public void testDirectionNotChanged() {
     service.update(snake.getSnakeInstance());
-    assertEquals(snake.getSnakeInstance().getSnakeDirection(), Direction.DOWN);
+    assertEquals(snake.getSnakeInstance().getSnakeDirection(), SnakeDirection.DOWN);
   }
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#pause(spypunk.snake.model.SnakeInstance)}.
+   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#pause(SnakeInstanceImpl)}.
    */
   @Test
   public void testPause() {
@@ -181,15 +182,15 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#updateDirection(spypunk.snake.model.SnakeInstance, spypunk.snake.model.Direction)}.
+   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#updateDirection(SnakeInstanceImpl, SnakeDirection)}.
    */
   @Test
   public void testUpdateDirection() {
-    service.updateDirection(snake.getSnakeInstance(), Direction.LEFT);
+    service.updateDirection(snake.getSnakeInstance(), SnakeDirection.LEFT);
     for (int i = 0; i < SnakeConstants.DEFAULT_SPEED + 1; i++) {
       service.update(snake.getSnakeInstance());
     }
-    assertEquals(Direction.LEFT, snake.getSnakeInstance().getSnakeDirection());
+    assertEquals(SnakeDirection.LEFT, snake.getSnakeInstance().getSnakeDirection());
     assertEquals(Optional.empty(),
         snake.getSnakeInstance().getNewSnakeDirection());
   }

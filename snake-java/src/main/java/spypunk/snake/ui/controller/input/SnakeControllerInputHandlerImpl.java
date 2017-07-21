@@ -23,7 +23,7 @@ import org.apache.commons.collections4.ListUtils;
 
 import com.google.common.collect.Maps;
 
-import spypunk.snake.model.Direction;
+import spypunk.snake.model.SnakeDirection;
 import spypunk.snake.ui.controller.command.SnakeControllerCommand;
 import spypunk.snake.ui.factory.SnakeControllerCommandFactory;
 
@@ -41,13 +41,13 @@ public class SnakeControllerInputHandlerImpl implements SnakeControllerInputHand
     @Inject
     public SnakeControllerInputHandlerImpl(final SnakeControllerCommandFactory snakeControllerCommandFactory) {
         pressedKeyCodesHandlers.put(KeyEvent.VK_LEFT,
-            () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(Direction.LEFT));
+            () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(SnakeDirection.LEFT));
 
         pressedKeyCodesHandlers.put(KeyEvent.VK_RIGHT,
-            () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(Direction.RIGHT));
+            () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(SnakeDirection.RIGHT));
 
         pressedKeyCodesHandlers.put(KeyEvent.VK_DOWN,
-            () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(Direction.DOWN));
+            () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(SnakeDirection.DOWN));
 
         releasedKeyCodesHandlers.put(KeyEvent.VK_SPACE,
             snakeControllerCommandFactory::createNewGameSnakeControllerCommand);
@@ -55,7 +55,7 @@ public class SnakeControllerInputHandlerImpl implements SnakeControllerInputHand
         releasedKeyCodesHandlers.put(KeyEvent.VK_P, snakeControllerCommandFactory::createPauseSnakeControllerCommand);
 
         pressedKeyCodesHandlers.put(KeyEvent.VK_UP,
-            () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(Direction.UP));
+            () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(SnakeDirection.UP));
 
         releasedKeyCodesHandlers.put(KeyEvent.VK_M, snakeControllerCommandFactory::createMuteSnakeControllerCommand);
 

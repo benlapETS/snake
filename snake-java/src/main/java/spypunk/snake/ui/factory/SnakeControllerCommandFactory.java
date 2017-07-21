@@ -8,7 +8,7 @@
 
 package spypunk.snake.ui.factory;
 
-import spypunk.snake.model.Direction;
+import spypunk.snake.model.SnakeDirection;
 import spypunk.snake.ui.controller.command.SnakeControllerCommand;
 
 public interface SnakeControllerCommandFactory {
@@ -17,7 +17,7 @@ public interface SnakeControllerCommandFactory {
 
     SnakeControllerCommand createPauseSnakeControllerCommand();
 
-    SnakeControllerCommand createDirectionSnakeControllerCommand(Direction direction);
+    SnakeControllerCommand createDirectionSnakeControllerCommand(SnakeDirection direction);
 
     SnakeControllerCommand createMuteSnakeControllerCommand();
 
