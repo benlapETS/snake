@@ -1,2 +1,2 @@
-include ':snake-android',':snake-java'
+include ':snake-android', ':snake-java', ':snake-library'
 rootProject.name = 'snake'

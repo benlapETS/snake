@@ -22,7 +22,7 @@ import spypunk.snake.sound.service.SoundService;
 import spypunk.snake.sound.service.SoundServiceImpl;
 import spypunk.snake.ui.cache.SnakeImageCache;
 import spypunk.snake.ui.cache.SnakeImageCacheImpl;
-import spypunk.snake.ui.controller.SnakeController;
+import spypunk.snake.ui.controller.input.SnakeController;
 import spypunk.snake.ui.controller.SnakeControllerImpl;
 import spypunk.snake.ui.controller.event.SnakeControllerSnakeEventHandler;
 import spypunk.snake.ui.controller.event.SnakeControllerSnakeEventHandlerImpl;

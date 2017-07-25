@@ -13,10 +13,10 @@ import javax.inject.Singleton;
 
 import spypunk.snake.model.Snake;
 import spypunk.snake.ui.cache.SnakeImageCache;
-import spypunk.snake.ui.controller.SnakeController;
+import spypunk.snake.ui.controller.input.SnakeController;
 import spypunk.snake.ui.font.cache.SnakeFontCache;
-import spypunk.snake.ui.view.SnakeView;
-import spypunk.snake.ui.view.SnakeViewImpl;
+import spypunk.snake.ui.view.SnakeGameView;
+import spypunk.snake.ui.view.SnakeGameViewImpl;
 
 @Singleton
 public class SnakeViewFactoryImpl implements SnakeViewFactory {
@@ -36,7 +36,7 @@ public class SnakeViewFactoryImpl implements SnakeViewFactory {
     }
 
     @Override
-    public SnakeView createsnakeView(final Snake snake) {
-        return new SnakeViewImpl(snakeController, fontCache, snakeImageCache, snake);
+    public SnakeGameView createsnakeView(final Snake snake) {
+        return new SnakeGameViewImpl(snakeController, fontCache, snakeImageCache, snake);
     }
 }

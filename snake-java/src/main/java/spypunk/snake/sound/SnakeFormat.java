@@ -13,7 +13,9 @@ public enum SnakeFormat implements Format<AudioFileReader>{
         public AudioFileReader getFileReader() {
             return new MpegAudioFileReader();
         }
-    };
-
-    public abstract AudioFileReader getFileReader();
+        @Override
+        public String getName(){
+            return this.name();
+        }
+    }
 }

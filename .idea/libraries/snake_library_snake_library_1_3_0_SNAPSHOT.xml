@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="snake-library.snake-library-1.3.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/snake-library/build/libs/snake-library-1.3.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

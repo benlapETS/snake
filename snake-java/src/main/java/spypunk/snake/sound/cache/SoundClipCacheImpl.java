@@ -30,6 +30,7 @@ import spypunk.snake.exception.SnakeException;
 import spypunk.snake.sound.Sound;
 import spypunk.snake.sound.SoundClip;
 import spypunk.snake.sound.SoundClipImpl;
+import spypunk.snake.sound.SoundImpl;
 import spypunk.snake.sound.service.SoundServiceImpl;
 
 @Singleton
@@ -37,7 +38,7 @@ public class SoundClipCacheImpl implements SoundClipCache {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SoundClipCacheImpl.class);
 
-    private static final String SOUNDS_FOLDER = "/sound/".intern();
+    private static final String SOUNDS_FOLDER = "/sound/";
 
     private final Map<Sound, SoundClip> soundClips = createSoundClips();
 
@@ -65,7 +66,7 @@ public class SoundClipCacheImpl implements SoundClipCache {
     }
 
     private static Map<Sound, SoundClip> createSoundClips() {
-        return Lists.newArrayList(Sound.values()).stream()
+        return Lists.newArrayList(SoundImpl.values()).stream()
                 .collect(Collectors.toMap(Function.identity(), SoundClipCacheImpl::createSoundClip));
     }
 }

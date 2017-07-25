@@ -20,21 +20,22 @@ import spypunk.snake.controller.gameloop.SnakeControllerGameLoop;
 import spypunk.snake.factory.SnakeFactory;
 import spypunk.snake.model.Snake;
 import spypunk.snake.model.SnakeEvent;
-import spypunk.snake.model.SnakeInstanceImpl;
+import spypunk.snake.model.SnakeInstance;
 import spypunk.snake.service.SnakeInstanceService;
 import spypunk.snake.ui.controller.command.SnakeControllerCommand;
 import spypunk.snake.ui.controller.event.SnakeControllerSnakeEventHandler;
+import spypunk.snake.ui.controller.input.SnakeController;
 import spypunk.snake.ui.controller.input.SnakeControllerInputHandler;
 import spypunk.snake.ui.factory.SnakeViewFactory;
 import spypunk.snake.ui.util.SwingUtils;
-import spypunk.snake.ui.view.SnakeView;
+import spypunk.snake.ui.view.SnakeGameView;
 
 @Singleton
 public class SnakeControllerImpl implements SnakeController {
 
     private final SnakeInstanceService snakeInstanceService;
 
-    private final SnakeView snakeView;
+    private final SnakeGameView snakeView;
 
     private final Snake snake;
 
@@ -78,18 +79,18 @@ public class SnakeControllerImpl implements SnakeController {
 
     @Override
     public void onGameLoopUpdate() {
-        executesnakeControllerCommands(snakeControllerInputHandler.handleInputs());
+        executeSnakeControllerCommands(snakeControllerInputHandler.handleInputs());
 
         snakeControllerInputHandler.reset();
 
-        final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
+        final SnakeInstance snakeInstance = snake.getSnakeInstance();
 
         if (snakeInstance != null) {
             snakeInstanceService.update(snakeInstance);
 
             final List<SnakeEvent> snakeEvents = snakeInstance.getSnakeEvents();
 
-            executesnakeControllerCommands(
+            executeSnakeControllerCommands(
                 snakeControllersnakeEventHandler.handleEvents(snakeEvents));
         }
 
@@ -107,11 +108,11 @@ public class SnakeControllerImpl implements SnakeController {
     }
 
     @Override
-    public SnakeView getSnakeView() {
+    public SnakeGameView getSnakeView() {
         return snakeView;
     }
 
-    private void executesnakeControllerCommands(final Collection<SnakeControllerCommand> snakeControllerCommands) {
+    private void executeSnakeControllerCommands(final Collection<SnakeControllerCommand> snakeControllerCommands) {
         if (CollectionUtils.isEmpty(snakeControllerCommands)) {
             return;
         }

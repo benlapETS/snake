@@ -27,6 +27,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="snake-library" exported="" />
+    <orderEntry type="module" module-name="snake-library" exported="" />
+    <orderEntry type="module" module-name="snake-library" exported="" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="guice-4.1.0" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="slf4j-log4j12-1.7.21" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="mp3spi-1.9.5.4" level="project" />
@@ -39,13 +42,5 @@
     <orderEntry type="library" exported="" scope="PROVIDED" name="jlayer-1.0.1.4" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="tritonus-share-0.3.7.4" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.4" level="project" />
-    <orderEntry type="library" exported="" name="snake-java.snake" level="project" />
-    <orderEntry type="library" exported="" name="snake-java.snake" level="project" />
-    <orderEntry type="library" exported="" name="snake-java.snake" level="project" />
-    <orderEntry type="library" exported="" name="snake-java.snake" level="project" />
-    <orderEntry type="library" exported="" name="snake-java.snake" level="project" />
-    <orderEntry type="library" exported="" name="snake-java.snake" level="project" />
-    <orderEntry type="library" exported="" name="snake-java.snake" level="project" />
-    <orderEntry type="library" exported="" name="snake-java.snake" level="project" />
   </component>
 </module>

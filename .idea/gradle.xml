@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/snake-android" />
             <option value="$PROJECT_DIR$/snake-java" />
+            <option value="$PROJECT_DIR$/snake-library" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

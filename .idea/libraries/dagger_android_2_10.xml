@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="dagger-android-2.10">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/a905a256c09301cbea947a581b7871ac493df47e/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/a905a256c09301cbea947a581b7871ac493df47e/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

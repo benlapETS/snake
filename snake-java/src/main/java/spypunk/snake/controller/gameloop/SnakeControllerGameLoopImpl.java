@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import spypunk.snake.ui.controller.SnakeController;
+import spypunk.snake.ui.controller.input.SnakeController;
 
 @Singleton
 public final class SnakeControllerGameLoopImpl implements SnakeControllerGameLoop, Runnable {

@@ -11,14 +11,16 @@ package spypunk.snake.ui.factory;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import spypunk.snake.model.SnakeDirection;
-import spypunk.snake.model.SnakeInstanceImpl;
+import spypunk.snake.model.Direction;
+import spypunk.snake.model.SnakeInstance;
 import spypunk.snake.model.State;
 import spypunk.snake.service.SnakeInstanceService;
-import spypunk.snake.sound.Sound;
+import spypunk.snake.sound.SoundImpl;
 import spypunk.snake.sound.service.SoundService;
-import spypunk.snake.ui.controller.SnakeController;
+import spypunk.snake.ui.controller.input.SnakeController;
 import spypunk.snake.ui.controller.command.SnakeControllerCommand;
+import spypunk.snake.ui.view.GameView;
+import spypunk.snake.ui.view.SnakeGameView;
 
 @Singleton
 public class SnakeControllerCommandFactoryImpl implements SnakeControllerCommandFactory {
@@ -27,7 +29,7 @@ public class SnakeControllerCommandFactoryImpl implements SnakeControllerCommand
 
     private final SoundService soundService;
 
-    private final SnakeController snakeController;
+    private final SnakeController<SnakeGameView> snakeController;
 
     @Inject
     public SnakeControllerCommandFactoryImpl(final SnakeInstanceService snakeInstanceService,
@@ -43,14 +45,14 @@ public class SnakeControllerCommandFactoryImpl implements SnakeControllerCommand
         return snake -> {
             snakeInstanceService.create(snake);
 
-            soundService.playMusic(Sound.BACKGROUND);
+            soundService.playMusic(SoundImpl.BACKGROUND);
         };
     }
 
     @Override
     public SnakeControllerCommand createPauseSnakeControllerCommand() {
         return snake -> {
-            final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
+            final SnakeInstance snakeInstance = snake.getSnakeInstance();
 
             if (snakeInstance != null) {
                 snakeInstanceService.pause(snakeInstance);
@@ -65,9 +67,9 @@ public class SnakeControllerCommandFactoryImpl implements SnakeControllerCommand
     }
 
     @Override
-    public SnakeControllerCommand createDirectionSnakeControllerCommand(final SnakeDirection direction) {
+    public SnakeControllerCommand createDirectionSnakeControllerCommand(final Direction direction) {
         return snake -> {
-            final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
+            final SnakeInstance snakeInstance = snake.getSnakeInstance();
 
             if (snakeInstance != null) {
                 snakeInstanceService.updateDirection(snake.getSnakeInstance(), direction);
@@ -95,11 +97,11 @@ public class SnakeControllerCommandFactoryImpl implements SnakeControllerCommand
 
     @Override
     public SnakeControllerCommand createGameOverSnakeControllerCommand() {
-        return snake -> soundService.playMusic(Sound.GAME_OVER);
+        return snake -> soundService.playMusic(SoundImpl.GAME_OVER);
     }
 
     @Override
     public SnakeControllerCommand createFoodEatenSnakeControllerCommand() {
-        return snake -> soundService.playSound(Sound.FOOD_EATEN);
+        return snake -> soundService.playSound(SoundImpl.FOOD_EATEN);
     }
 }

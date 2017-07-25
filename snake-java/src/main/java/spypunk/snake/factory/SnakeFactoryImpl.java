@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 
 import spypunk.snake.Main;
 import spypunk.snake.exception.SnakeException;
+import spypunk.snake.model.Builder;
 import spypunk.snake.model.Snake;
 
 @Singleton
@@ -58,6 +59,6 @@ public class SnakeFactoryImpl implements SnakeFactory {
 
     @Override
     public Snake createSnake() {
-        return Snake.Builder.instance().setName(name).setVersion(version).setProjectURI(uri).build();
+        return Builder.instance().setName(name).setVersion(version).setProjectURI(uri).build();
     }
 }

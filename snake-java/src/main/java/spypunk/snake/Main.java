@@ -22,7 +22,7 @@ import com.google.inject.Injector;
 import com.google.inject.ProvisionException;
 
 import spypunk.snake.guice.SnakeModule;
-import spypunk.snake.ui.controller.SnakeController;
+import spypunk.snake.ui.controller.input.SnakeController;
 import spypunk.snake.ui.util.SwingUtils;
 
 public final class Main {

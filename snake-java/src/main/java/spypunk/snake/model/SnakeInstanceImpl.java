@@ -21,7 +21,7 @@ import com.google.common.collect.Lists;
 
 import spypunk.snake.constants.SnakeConstants;
 
-public class SnakeInstanceImpl extends SnakeInstance<Point>{
+public class SnakeInstanceImpl implements SnakeInstance<Point, SnakeDirection>{
     private int score;
 
     private int speed;
@@ -36,7 +36,7 @@ public class SnakeInstanceImpl extends SnakeInstance<Point>{
 
     private SnakeDirection snakeDirection;
 
-    private Optional<SnakeDirection> newSnakeDirection = Optional.empty();
+    private Optional<? extends SnakeDirection> newSnakeDirection = Optional.empty();
 
     private SnakeFood food;
 
@@ -90,19 +90,23 @@ public class SnakeInstanceImpl extends SnakeInstance<Point>{
         return snakeDirection;
     }
 
-    public void setSnakeDirection(final SnakeDirection snakeDirection) {
-        this.snakeDirection = snakeDirection;
-    }
+  @Override
+  public void setSnakeDirection(SnakeDirection snakeDirection) {
+    this.snakeDirection = snakeDirection;
 
-    public Optional<SnakeDirection> getNewSnakeDirection() {
+  }
+
+
+  public Optional<? extends SnakeDirection> getNewSnakeDirection() {
         return newSnakeDirection;
     }
 
-    public void setNewSnakeDirection(final Optional<SnakeDirection> newSnakeDirection) {
-        this.newSnakeDirection = newSnakeDirection;
-    }
+  @Override
+  public void setNewSnakeDirection(Optional<? extends SnakeDirection> newSnakeDirection) {
+    this.newSnakeDirection = newSnakeDirection;
+  }
 
-    public int getFramesSinceLastFood() {
+  public int getFramesSinceLastFood() {
         return framesSinceLastFood;
     }
 
@@ -150,7 +154,7 @@ public class SnakeInstanceImpl extends SnakeInstance<Point>{
   }
 
   public Point getSnakeHeadPartNextLocation() {
-    return snakeDirection.apply(position.getHeadLocation());
+    return snakeDirection.applyPoint(position.getHeadLocation());
   }
 
   public boolean canMove() {
