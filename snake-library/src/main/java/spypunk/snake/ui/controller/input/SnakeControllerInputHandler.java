@@ -13,7 +13,7 @@ import java.util.List;
 import spypunk.snake.ui.controller.command.SnakeControllerCommand;
 import spypunk.snake.ui.event.UIEvent;
 
-public interface SnakeControllerInputHandler {
+public interface SnakeControllerInputHandler<S> {
 
     void onUIEvent(UIEvent event);
 
@@ -30,7 +30,7 @@ public interface SnakeControllerInputHandler {
 
     void onKeyReleased(int keyCode);
 
-    List<SnakeControllerCommand> handleInputs();
+    List<SnakeControllerCommand<S>> handleInputs();
 
     void reset();
 }

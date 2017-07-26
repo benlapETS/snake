@@ -8,6 +8,8 @@
 
 package spypunk.snake.controller.gameloop;
 
+import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -31,6 +33,12 @@ public final class SnakeControllerGameLoopImpl implements SnakeControllerGameLoo
     public SnakeControllerGameLoopImpl(final SnakeController snakeController) {
         executorService = Executors.newSingleThreadExecutor();
         this.snakeController = snakeController;
+    }
+
+    @Override
+    public void setOnGameLoopUpdateListener(OnGameLoopUpdateListener listener) {
+        //not implemented
+        //TODO make interface an abstract class and make default implementation
     }
 
     @Override

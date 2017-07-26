@@ -12,7 +12,7 @@ import spypunk.snake.model.Snake;
 import spypunk.snake.ui.view.SnakeGameView;
 
 @FunctionalInterface
-public interface SnakeViewFactory {
+public interface SnakeViewFactory<S extends Snake> {
 
-    SnakeGameView createsnakeView(Snake snake);
+    SnakeGameView createSnakeView(S snake);
 }

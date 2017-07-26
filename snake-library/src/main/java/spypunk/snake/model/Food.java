@@ -1,7 +1,5 @@
 package spypunk.snake.model;
 
-import java.awt.Point;
-
 /**
  * A representation of a food item.
  * @param <T> the type used for the food's location

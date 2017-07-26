@@ -3,6 +3,8 @@ package com.etsmtl.ca.log530.snake.service;
 import android.graphics.Point;
 
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeDirection;
+import com.etsmtl.ca.log530.snake.model.AndroidSnakeFood;
+import com.etsmtl.ca.log530.snake.model.AndroidSnakeImpl;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeInstanceImpl;
 
 import java.util.ArrayList;
@@ -15,34 +17,29 @@ import java.util.stream.IntStream;
 import javax.inject.Singleton;
 
 import spypunk.snake.constants.SnakeConstants;
-import spypunk.snake.model.Direction;
-import spypunk.snake.model.Food;
-import spypunk.snake.model.Snake;
 import spypunk.snake.model.SnakeEvent;
-import spypunk.snake.model.SnakeInstance;
 import spypunk.snake.model.State;
 import spypunk.snake.model.Type;
-import spypunk.snake.service.SnakeInstanceService;
 
 /**
  * Created by gabar on 2017-07-24.
  */
 
 @Singleton
-public class AndroidSnakeInstanceServiceImpl implements SnakeInstanceService {
+public class AndroidSnakeInstanceServiceImpl extends AndroidSnakeInstanceService {
     private static final int BONUS_FOOD_FRAME_LIMIT = 120;
 
     private final List<Point> gridLocations = createGridLocations();
 
     @Override
-    public void create(final Snake snake) {
+    public void create(final AndroidSnakeImpl snake) {
         final AndroidSnakeInstanceImpl snakeInstance = new AndroidSnakeInstanceImpl();
         snakeInstance.produceNewFood(new ArrayList<>(gridLocations));
         snake.setSnakeInstance(snakeInstance);
     }
 
     @Override
-    public void update(final SnakeInstance snakeInstance) {
+    public void update(final AndroidSnakeInstanceImpl snakeInstance) {
         snakeInstance.clearSnakeEvents();
         if (!snakeInstance.isAt(State.RUNNING)) {
             return;
@@ -53,13 +50,13 @@ public class AndroidSnakeInstanceServiceImpl implements SnakeInstanceService {
     }
 
     @Override
-    public void pause(final SnakeInstance snakeInstance) {
+    public void pause(final AndroidSnakeInstanceImpl snakeInstance) {
         snakeInstance.togglePause();
     }
 
     @Override
-    public void updateDirection(final SnakeInstance snakeInstance,
-                                final Direction direction) {
+    public void updateDirection(final AndroidSnakeInstanceImpl snakeInstance,
+                                final AndroidSnakeDirection direction) {
         if (snakeInstance.isAt(State.RUNNING)) {
             snakeInstance.setNewSnakeDirection(Optional.of(direction));
         }
@@ -72,7 +69,7 @@ public class AndroidSnakeInstanceServiceImpl implements SnakeInstanceService {
                 .flatMap(Collection::stream).collect(Collectors.toList());
     }
 
-    private void handleMovement(final SnakeInstance snakeInstance) {
+    private void handleMovement(final AndroidSnakeInstanceImpl snakeInstance) {
         if (!snakeInstance.canHandleMovement()) {
             return;
         }
@@ -80,7 +77,7 @@ public class AndroidSnakeInstanceServiceImpl implements SnakeInstanceService {
         handleDirection(snakeInstance);
 
         if (snakeInstance.canMove()) {
-            snakeInstance.move(new ArrayList<Point>(gridLocations));
+            snakeInstance.move(new ArrayList<>(gridLocations));
         } else {
             snakeInstance.setState(State.GAME_OVER);
             snakeInstance.addSnakeEvents(SnakeEvent.GAME_OVER);
@@ -89,18 +86,18 @@ public class AndroidSnakeInstanceServiceImpl implements SnakeInstanceService {
         snakeInstance.resetCurrentMovementFrame();
     }
 
-    private void handleBonusFood(final SnakeInstance snakeInstance) {
-        final Food<Point> food = snakeInstance.getFood();
+    private void handleBonusFood(final AndroidSnakeInstanceImpl snakeInstance) {
+        final AndroidSnakeFood food = snakeInstance.getFood();
         final Type foodType = food.getType();
 
         if (Type.BONUS.equals(foodType)
                 && snakeInstance.getFramesSinceLastFood() == BONUS_FOOD_FRAME_LIMIT) {
-            snakeInstance.produceNewFood(new ArrayList<Point>(gridLocations));
+            snakeInstance.produceNewFood(new ArrayList<>(gridLocations));
         }
     }
 
-    private void handleDirection(final SnakeInstance snakeInstance) {
-        final Optional<AndroidSnakeDirection> newSnakeDirection = snakeInstance
+    private void handleDirection(final AndroidSnakeInstanceImpl snakeInstance) {
+        final Optional<? extends AndroidSnakeDirection> newSnakeDirection = snakeInstance
                 .getNewSnakeDirection();
 
         if (!newSnakeDirection.isPresent()) {

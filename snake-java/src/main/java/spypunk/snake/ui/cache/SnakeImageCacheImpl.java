@@ -33,13 +33,13 @@ public class SnakeImageCacheImpl implements SnakeImageCache {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SnakeImageCacheImpl.class);
 
-    private static final String IMAGE_FILE_PATTERN = "%s%s.png".intern();
+    private static final String IMAGE_FILE_PATTERN = "%s%s.png";
 
-    private static final String ICONS_FOLDER = "/img/icons/".intern();
+    private static final String ICONS_FOLDER = "/img/icons/";
 
-    private static final String SNAKE_FOLDER = "/img/snake/".intern();
+    private static final String SNAKE_FOLDER = "/img/snake/";
 
-    private static final String FOOD_FOLDER = "/img/food/".intern();
+    private static final String FOOD_FOLDER = "/img/food/";
 
     private final Map<Icon, Image> icons = createIcons();
 

@@ -10,15 +10,20 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.ThumbnailUtils;
+import android.os.Looper;
 import android.support.annotation.ColorInt;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.etsmtl.ca.log530.snake.R;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeDirection;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeFood;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeImpl;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeInstanceImpl;
+import com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants;
 import com.google.common.collect.Maps;
 
 import java.util.List;
@@ -32,6 +37,7 @@ import spypunk.snake.ui.icon.Icon;
 import spypunk.snake.ui.snakepart.SnakePart;
 import spypunk.snake.ui.view.SnakeGameView;
 
+import static com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants.*;
 import static com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants.DEFAULT_BORDER_COLOR;
 import static com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants.TAP_ANYWHERE;
 
@@ -39,7 +45,7 @@ import static com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants.TA
  * Created by gabar on 2017-07-24.
  */
 
-public class AndroidSnakeInstanceGameView extends View implements SnakeGameView, ImageCache<Bitmap> {
+public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGameView, ImageCache<Bitmap> {
 
     private static final String PAUSE = "PAUSE";
 
@@ -58,7 +64,7 @@ public class AndroidSnakeInstanceGameView extends View implements SnakeGameView,
 
     private final float y;
 
-    private int cellSize;
+    private int cellSize = CELL_SIZE;
 
 
     private AndroidSnakeImpl snake;
@@ -77,7 +83,7 @@ public class AndroidSnakeInstanceGameView extends View implements SnakeGameView,
 
     public AndroidSnakeInstanceGameView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
+        setWillNotDraw(false);
 
         frozenFont = Typeface.createFromAsset(context.getAssets(),"fonts/neutronium.ttf");
 
@@ -152,21 +158,46 @@ public class AndroidSnakeInstanceGameView extends View implements SnakeGameView,
     @Override
     public void onSizeChanged(int w, int h, int oldw, int oldh){
         //fill largest of width or height, since constants could be changed
+        //default to cellsize if w or h = 0
+        if(w==0 || h == 0){
+            cellSize = CELL_SIZE;
+        }
         cellSize = Math.min(h/SnakeConstants.HEIGHT,w/SnakeConstants.WIDTH);
         init();
         invalidate();
     }
 
     @Override
-    public  void onDraw(Canvas canvas){
+    protected  void dispatchDraw(Canvas canvas){
+        super.dispatchDraw(canvas);
+        renderSnake(canvas);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
         renderSnake(canvas);
     }
 
     @Override
+    protected void onLayout(boolean b, int i, int i1, int i2, int i3) {
+        //nothing to really do
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int width = getMeasuredWidth();
+        int height = getMeasuredHeight();
+        cellSize = Math.min(height/SnakeConstants.HEIGHT,width/SnakeConstants.WIDTH);
+
+        setMeasuredDimension(width, height);
+    }
+
+    @Override
     public void update() {
         //SwingUtils.doInGraphics(image, this::renderSnake);
-        invalidate();
+        postInvalidate();
     }
 
     private void renderSnake(final Canvas graphics) {

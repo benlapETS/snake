@@ -16,15 +16,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import spypunk.snake.constants.SnakeConstants;
-import spypunk.snake.factory.SnakeFactory;
 import spypunk.snake.factory.SnakeFactoryImpl;
 import spypunk.snake.model.SnakeDirection;
-import spypunk.snake.model.Snake;
+import spypunk.snake.model.SnakeImpl;
 import spypunk.snake.model.SnakeInstance;
 import spypunk.snake.model.State;
 import spypunk.snake.model.Type;
 import spypunk.snake.model.Direction;
-import spypunk.snake.service.SnakeInstanceServiceImpl;
+import spypunk.snake.service.AWTSnakeInstanceServiceImpl;
 
 /**
  * @author bened
@@ -32,19 +31,19 @@ import spypunk.snake.service.SnakeInstanceServiceImpl;
  */
 public class SnakeInstanceServiceTest {
 
-  private Snake snake;
-  private SnakeInstanceServiceImpl service;
+  private SnakeImpl snake;
+  private AWTSnakeInstanceServiceImpl service;
 
   @Before
   public void Setup() {
-    SnakeFactory factory = new SnakeFactoryImpl();
+    SnakeFactoryImpl factory = new SnakeFactoryImpl();
     snake = factory.createSnake();
-    service = new SnakeInstanceServiceImpl();
+    service = new AWTSnakeInstanceServiceImpl();
     service.create(snake);
   }
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
+   * {@link AWTSnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
    */
   @Test
   public void testInitialSpeed() {
@@ -54,7 +53,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
+   * {@link AWTSnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
    */
   @Test
   public void testInitialState() {
@@ -63,7 +62,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
+   * {@link AWTSnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
    */
   @Test
   public void testInitialDirection() {
@@ -72,7 +71,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
+   * {@link AWTSnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
    */
   @Test
   public void testInitialSnakeSize() {
@@ -81,7 +80,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
+   * {@link AWTSnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
    */
   @Test
   public void testInitialSnakePosition() {
@@ -95,7 +94,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
+   * {@link AWTSnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
    */
   @Test
   public void testInitialStatistics() {
@@ -109,7 +108,7 @@ public class SnakeInstanceServiceTest {
   //Test not valid anymore since we can't access x,y location
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
+   * {@link AWTSnakeInstanceServiceImpl#create(spypunk.snake.model.Snake)}.
    */
   /*@Test
   public void testInitialFoodLocation() {
@@ -125,7 +124,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(SnakeInstance<Point>)}.
+   * {@link AWTSnakeInstanceServiceImpl#update(SnakeInstance<Point>)}.
    */
   @Test
   public void testUpdateFrame() {
@@ -142,7 +141,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(SnakeInstance<Point>)}.
+   * {@link AWTSnakeInstanceServiceImpl#update(SnakeInstance<Point>)}.
    */
   @Test
   public void testNotTimeToHandleMovement() {
@@ -153,7 +152,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(SnakeInstance<Point>)}.
+   * {@link AWTSnakeInstanceServiceImpl#update(SnakeInstance<Point>)}.
    */
   @Test
   public void testTimeToHandleMovement() {
@@ -166,7 +165,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#update(SnakeInstance<Point>)}.
+   * {@link AWTSnakeInstanceServiceImpl#update(SnakeInstance<Point>)}.
    */
   @Test
   public void testDirectionNotChanged() {
@@ -176,7 +175,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#pause(SnakeInstance<Point>)}.
+   * {@link AWTSnakeInstanceServiceImpl#pause(SnakeInstance<Point>)}.
    */
   @Test
   public void testPause() {
@@ -186,7 +185,7 @@ public class SnakeInstanceServiceTest {
 
   /**
    * Test method for
-   * {@link spypunk.snake.service.SnakeInstanceServiceImpl#updateDirection(SnakeInstance, Direction )}.
+   * {@link AWTSnakeInstanceServiceImpl#updateDirection(SnakeInstance, Direction )}.
    */
   @Test
   public void testUpdateDirection() {

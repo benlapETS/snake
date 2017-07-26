@@ -6,20 +6,20 @@ import java.net.URI;
  * Created by gabar on 2017-07-24.
  */
 
-public interface Snake<I extends SnakeInstance> {
-    String getName();
+public abstract class Snake<I extends SnakeInstance> {
+    public abstract String getName();
 
-    void setName(String name);
+    public abstract void setName(String name);
 
-    String getVersion();
+    public abstract String getVersion();
 
-    void setVersion(String version);
+    public abstract void setVersion(String version);
 
-    URI getProjectURI();
+    public abstract URI getProjectURI();
 
-    void setProjectURI(URI projectURI);
+    public abstract void setProjectURI(URI projectURI);
 
-    I getSnakeInstance();
+    public abstract I getSnakeInstance();
 
-    void setSnakeInstance(I snakeInstance);
+    public abstract void setSnakeInstance(I snakeInstance);
 }

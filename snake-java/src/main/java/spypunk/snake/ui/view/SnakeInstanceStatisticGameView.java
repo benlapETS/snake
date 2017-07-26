@@ -22,9 +22,9 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 
 import spypunk.snake.model.SnakeDirection;
+import spypunk.snake.model.SnakeImpl;
 import spypunk.snake.model.SnakeInstance;
 import spypunk.snake.model.Type;
-import spypunk.snake.model.Snake;
 import spypunk.snake.ui.cache.SnakeImageCache;
 import spypunk.snake.ui.font.FontType;
 import spypunk.snake.ui.font.cache.SnakeFontCache;
@@ -40,14 +40,14 @@ public class SnakeInstanceStatisticGameView extends AbstractSnakeInstanceGameVie
 
     private final Font defaultFont;
 
-    private final Snake snake;
+    private final SnakeImpl snake;
 
     private final Type foodType;
 
     private final Image foodImage;
 
     public SnakeInstanceStatisticGameView(final SnakeFontCache fontCache, final SnakeImageCache snakeImageCache,
-                                          final Snake snake, final Type foodType) {
+                                          final SnakeImpl snake, final Type foodType) {
         this.snake = snake;
         this.foodType = foodType;
         foodImage = snakeImageCache.getFoodImage(foodType);

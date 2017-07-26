@@ -1,12 +1,10 @@
 package spypunk.snake.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.google.common.collect.Lists;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import spypunk.snake.model.Direction;
 
@@ -14,60 +12,69 @@ import spypunk.snake.model.Direction;
  * Created by gabar on 2017-07-20.
  */
 
-public interface SnakeInstance<T, D extends Direction> {
+public abstract class SnakeInstance<T, D extends Direction> {
 
+    private List<SnakeEvent> snakeEvents = Lists.newArrayList();
 
-    int getScore();
+    private Optional<? extends D> newSnakeDirection = Optional.empty();
 
-    void updateScore();
+    public abstract int getScore();
 
-    int getSpeed();
+    public abstract void updateScore();
 
-    State getState();
+    public abstract int getSpeed();
 
-    void setState(final State state);
+    public abstract State getState();
 
-    List<SnakeEvent> getSnakeEvents();
+    public abstract void setState(final State state);
 
-    int getCurrentMovementFrame();
+    public final List<SnakeEvent> getSnakeEvents() {
+        return this.snakeEvents;
+    }
 
-    List<T> getSnakeParts();
+    public abstract int getCurrentMovementFrame();
 
-    D getSnakeDirection();
+    public abstract List<T> getSnakeParts();
 
-    void setSnakeDirection(final D snakeDirection);
+    public abstract D getSnakeDirection();
 
-    Optional<? extends D> getNewSnakeDirection();
+    public abstract void setSnakeDirection(final D snakeDirection);
 
-    void setNewSnakeDirection(final Optional<? extends D> newSnakeDirection);
+    public final Optional<? extends D> getNewSnakeDirection(){
+        return this.newSnakeDirection;
+    }
 
-    int getFramesSinceLastFood();
+    public final void setNewSnakeDirection(final Optional<? extends D> newSnakeDirection){
+        this.newSnakeDirection = newSnakeDirection;
+    }
 
-    Food getFood();
+    public abstract int getFramesSinceLastFood();
 
-    Map<Type, Integer> getStatistics();
+    public abstract Food getFood();
 
-    void clearSnakeEvents();
+    public abstract Map<Type, Integer> getStatistics();
 
-    void updateFrames();
+    public abstract void clearSnakeEvents();
 
-    void togglePause();
+    public abstract void updateFrames();
 
-    void produceNewFood(List<T> foodPossibleLocations);
+    public abstract void togglePause();
 
-    void addSnakeEvents(SnakeEvent evt);
+    public abstract void produceNewFood(List<T> foodPossibleLocations);
 
-    void resetCurrentMovementFrame();
+    public abstract void addSnakeEvents(SnakeEvent evt);
 
-    boolean isAt(State state);
+    public abstract void resetCurrentMovementFrame();
 
-    boolean canHandleMovement();
+    public abstract boolean isAt(State state);
 
-    T getSnakeHeadPartNextLocation();
+    public abstract boolean canHandleMovement();
 
-    boolean canMove();
+    public abstract T getSnakeHeadPartNextLocation();
 
-    void updateStatistics();
+    public abstract boolean canMove();
 
-    void move(List<T> gridLocations);
+    public abstract void updateStatistics();
+
+    public abstract void move(List<T> gridLocations);
 }

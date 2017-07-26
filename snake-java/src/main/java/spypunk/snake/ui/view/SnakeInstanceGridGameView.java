@@ -27,10 +27,11 @@ import javax.swing.ImageIcon;
 import com.google.common.collect.Maps;
 
 import spypunk.snake.constants.SnakeConstants;
-import spypunk.snake.model.Food;
 import spypunk.snake.model.SnakeDirection;
-import spypunk.snake.model.Snake;
+import spypunk.snake.model.SnakeFood;
+import spypunk.snake.model.SnakeImpl;
 import spypunk.snake.model.SnakeInstance;
+import spypunk.snake.model.SnakeInstanceImpl;
 import spypunk.snake.model.State;
 import spypunk.snake.ui.cache.SnakeImageCache;
 import spypunk.snake.ui.font.FontType;
@@ -66,7 +67,7 @@ public class SnakeInstanceGridGameView extends AbstractSnakeInstanceGameView {
 
     public SnakeInstanceGridGameView(final SnakeFontCache fontCache,
                                      final SnakeImageCache snakeImageCache,
-                                     final Snake snake) {
+                                     final SnakeImpl snake) {
         this.snakeImageCache = snakeImageCache;
         this.snake = snake;
 
@@ -95,7 +96,7 @@ public class SnakeInstanceGridGameView extends AbstractSnakeInstanceGameView {
     }
 
     private void renderSnake(final Graphics2D graphics) {
-        final SnakeInstance<Point, SnakeDirection> snakeInstance = snake.getSnakeInstance();
+        final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
 
         graphics.setColor(DEFAULT_BORDER_COLOR);
 
@@ -196,8 +197,8 @@ public class SnakeInstanceGridGameView extends AbstractSnakeInstanceGameView {
         }
     }
 
-    private void renderFood(final Graphics2D graphics, final SnakeInstance<Point, SnakeDirection> snakeInstance) {
-        final Food<Point> food = snakeInstance.getFood();
+    private void renderFood(final Graphics2D graphics, final SnakeInstanceImpl snakeInstance) {
+        final SnakeFood food = snakeInstance.getFood();
         final Image foodImage = snakeImageCache.getFoodImage(food.getType());
         final Rectangle rectangle = getRectangle(food.getLocation());
 

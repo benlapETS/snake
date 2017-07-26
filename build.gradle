@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath group: 'com.android.tools.build', name: 'gradle', version:'2.3.3'
+        classpath group: 'com.android.tools.build', name: 'gradle', version: '3.0.0-alpha8'
     }
 }
 
@@ -18,6 +18,9 @@ allprojects {
 
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com'
+        }
     }
 }
 

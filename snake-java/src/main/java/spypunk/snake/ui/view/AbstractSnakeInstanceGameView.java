@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JLabel;
 
-import spypunk.snake.model.Snake;
+import spypunk.snake.model.SnakeImpl;
 
 public abstract class AbstractSnakeInstanceGameView extends JLabel implements GameView {
 
@@ -20,5 +20,5 @@ public abstract class AbstractSnakeInstanceGameView extends JLabel implements Ga
 
     protected transient BufferedImage image;
 
-    protected Snake snake;
+    protected SnakeImpl snake;
 }

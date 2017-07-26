@@ -13,7 +13,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/build/classes/java/main" />
     <output-test url="file://$MODULE_DIR$/build/classes/java/test" />
     <exclude-output />
@@ -36,7 +36,7 @@
     <orderEntry type="library" exported="" scope="PROVIDED" name="commons-collections4-4.1" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="aopalliance-1.0" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="guava-19.0" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="guava-20.0" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="slf4j-api-1.7.21" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="log4j-1.2.17" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="jlayer-1.0.1.4" level="project" />

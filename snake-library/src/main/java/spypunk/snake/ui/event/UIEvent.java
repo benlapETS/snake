@@ -8,5 +8,7 @@ public enum UIEvent {
      UP,
     RIGHT,
    DOWN ,
-    LEFT;
+    LEFT,
+    PAUSE_TRIGGER,
+    NEW_GAME
 }

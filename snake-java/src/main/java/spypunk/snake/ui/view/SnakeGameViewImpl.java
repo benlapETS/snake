@@ -28,6 +28,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
+import spypunk.snake.model.SnakeImpl;
 import spypunk.snake.model.Type;
 import spypunk.snake.model.Snake;
 import spypunk.snake.ui.cache.SnakeImageCache;
@@ -117,7 +118,7 @@ public class SnakeGameViewImpl implements SnakeGameView {
     public SnakeGameViewImpl(final SnakeController snakeController,
                              final SnakeFontCache fontCache,
                              final SnakeImageCache snakeImageCache,
-                             final Snake snake) {
+                             final SnakeImpl snake) {
         snakeInstanceGridView = new SnakeInstanceGridGameView(fontCache, snakeImageCache, snake);
         snakeInstanceScoreView = new SnakeInstanceScoreGameView(fontCache, snake);
         snakeInstanceNormalStatisticView = new SnakeInstanceStatisticGameView(fontCache, snakeImageCache, snake, Type.NORMAL);

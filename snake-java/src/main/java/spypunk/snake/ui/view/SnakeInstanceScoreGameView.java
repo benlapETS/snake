@@ -13,23 +13,21 @@ import static spypunk.snake.ui.constants.SnakeUIConstants.DEFAULT_FONT_COLOR;
 
 import java.awt.Font;
 import java.awt.Graphics2D;
-import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
-import spypunk.snake.model.Snake;
-import spypunk.snake.model.SnakeDirection;
-import spypunk.snake.model.SnakeInstance;
+import spypunk.snake.model.SnakeImpl;
+import spypunk.snake.model.SnakeInstanceImpl;
 import spypunk.snake.ui.font.FontType;
 import spypunk.snake.ui.font.cache.SnakeFontCache;
 import spypunk.snake.ui.util.SwingUtils;
 
 public class SnakeInstanceScoreGameView extends AbstractSnakeInstanceGameView {
 
-    private static final String EMPTY_STRING = "".intern();
+    private static final String EMPTY_STRING = "";
 
     private static final long serialVersionUID = 3093168306699870331L;
 
@@ -37,10 +35,10 @@ public class SnakeInstanceScoreGameView extends AbstractSnakeInstanceGameView {
 
     private final Font scoreFont;
 
-    private final Snake snake;
+    private final SnakeImpl snake;
 
     public SnakeInstanceScoreGameView(final SnakeFontCache fontCache,
-                                      final Snake snake) {
+                                      final SnakeImpl snake) {
         this.snake = snake;
 
         scoreFont = fontCache.getFont(FontType.SCORE);
@@ -60,7 +58,7 @@ public class SnakeInstanceScoreGameView extends AbstractSnakeInstanceGameView {
     }
 
     private void renderScore(final Graphics2D graphics) {
-        final SnakeInstance<Point, SnakeDirection> snakeInstance = snake.getSnakeInstance();
+        final SnakeInstanceImpl snakeInstance = snake.getSnakeInstance();
 
         final String score = snakeInstance == null ? EMPTY_STRING : String.valueOf(snakeInstance.getScore());
 

@@ -11,7 +11,7 @@ package spypunk.snake.factory;
 import spypunk.snake.model.Snake;
 
 @FunctionalInterface
-public interface SnakeFactory {
+public interface SnakeFactory<S extends Snake> {
 
-    Snake createSnake();
+    S createSnake();
 }

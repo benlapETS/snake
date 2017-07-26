@@ -21,7 +21,7 @@ public class SnakePosition implements Position<Point>{
    * 
    */
   public SnakePosition() {
-    snakeParts = new ArrayDeque<Point>();
+    snakeParts = new ArrayDeque<>();
     final int x = SnakeConstants.WIDTH / 2;
     snakeParts.add(new Point(x, 2));
     snakeParts.add(new Point(x, 1));

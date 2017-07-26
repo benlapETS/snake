@@ -7,7 +7,7 @@ import java.net.URI;
  */
 public final class Builder {
 
-    private final Snake snake = new SnakeImpl();
+    private final SnakeImpl snake = new SnakeImpl();
 
     private Builder() {
     }
@@ -31,7 +31,7 @@ public final class Builder {
         return this;
     }
 
-    public Snake build() {
+    public SnakeImpl build() {
         return snake;
     }
 

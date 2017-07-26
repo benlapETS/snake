@@ -10,7 +10,7 @@ package spypunk.snake.model;
 
 import java.net.URI;
 
-public class SnakeImpl implements Snake<SnakeInstanceImpl> {
+public class SnakeImpl extends Snake<SnakeInstanceImpl> {
 
     private String name;
 

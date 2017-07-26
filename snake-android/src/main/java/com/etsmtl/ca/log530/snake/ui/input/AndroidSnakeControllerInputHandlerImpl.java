@@ -2,14 +2,19 @@ package com.etsmtl.ca.log530.snake.ui.input;
 
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeDirection;
 import spypunk.snake.ui.event.UIEvent;
+
+import com.etsmtl.ca.log530.snake.model.AndroidSnakeImpl;
+import com.etsmtl.ca.log530.snake.ui.factory.AndroidControllerCommandFactory;
 import com.google.common.collect.Maps;
 
 import org.apache.commons.collections4.ListUtils;
 
 import java.util.BitSet;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
@@ -17,7 +22,6 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import spypunk.snake.ui.controller.command.SnakeControllerCommand;
-import spypunk.snake.ui.factory.SnakeControllerCommandFactory;
 
 /**
  * This class handles snake game inputs. It primarily processes touch events, and no guarantee is given that it will handle key events.
@@ -28,88 +32,80 @@ import spypunk.snake.ui.factory.SnakeControllerCommandFactory;
 @Singleton
 public class AndroidSnakeControllerInputHandlerImpl extends AndroidSnakeControllerInputHandler {
 
-    private final BitSet pressedKeysBitSet = new BitSet();
+    private final Set<UIEvent> uiEventBitSet = new HashSet<>();
 
-    private final BitSet releasedKeysBitSet = new BitSet();
-
-    private final Map<UIEvent, Supplier<SnakeControllerCommand>> pressedKeyCodesHandlers = Maps.newHashMap();
-
-    private final Map<UIEvent, Supplier<SnakeControllerCommand>> releasedKeyCodesHandlers = Maps.newHashMap();
+    private final Map<UIEvent, Supplier<SnakeControllerCommand<AndroidSnakeImpl>>> pressedKeyCodesHandlers = Maps.newHashMap();
 
     @Inject
-    public AndroidSnakeControllerInputHandlerImpl(final SnakeControllerCommandFactory snakeControllerCommandFactory) {
+    public AndroidSnakeControllerInputHandlerImpl(final AndroidControllerCommandFactory controllerCommandFactory) {
         pressedKeyCodesHandlers.put(UIEvent.LEFT,
-                () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(AndroidSnakeDirection.LEFT));
+                () -> controllerCommandFactory.createDirectionSnakeControllerCommand(AndroidSnakeDirection.LEFT));
 
         pressedKeyCodesHandlers.put(UIEvent.RIGHT,
-                () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(AndroidSnakeDirection.RIGHT));
+                () -> controllerCommandFactory.createDirectionSnakeControllerCommand(AndroidSnakeDirection.RIGHT));
 
         pressedKeyCodesHandlers.put(UIEvent.DOWN,
-                () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(AndroidSnakeDirection.DOWN));
+                () -> controllerCommandFactory.createDirectionSnakeControllerCommand(AndroidSnakeDirection.DOWN));
         //TODO handle pause and newgame elsewhere
-        /*releasedKeyCodesHandlers.put(KeyEvent.VK_SPACE,
-                snakeControllerCommandFactory::createNewGameSnakeControllerCommand);
+        pressedKeyCodesHandlers.put(UIEvent.NEW_GAME,
+                controllerCommandFactory::createNewGameSnakeControllerCommand);
 
-        releasedKeyCodesHandlers.put(KeyEvent.VK_P, snakeControllerCommandFactory::createPauseSnakeControllerCommand);*/
-
+        pressedKeyCodesHandlers.put(UIEvent.PAUSE_TRIGGER, controllerCommandFactory::createPauseSnakeControllerCommand);
         pressedKeyCodesHandlers.put(UIEvent.UP,
-                () -> snakeControllerCommandFactory.createDirectionSnakeControllerCommand(AndroidSnakeDirection.UP));
+                () -> controllerCommandFactory.createDirectionSnakeControllerCommand(AndroidSnakeDirection.UP));
 
-        /*releasedKeyCodesHandlers.put(KeyEvent.VK_M, snakeControllerCommandFactory::createMuteSnakeControllerCommand);
+        /*releasedKeyCodesHandlers.put(KeyEvent.VK_M, controllerCommandFactory::createMuteSnakeControllerCommand);
 
         releasedKeyCodesHandlers.put(KeyEvent.VK_PAGE_UP,
-                snakeControllerCommandFactory::createIncreaseVolumeSnakeControllerCommand);
+                controllerCommandFactory::createIncreaseVolumeSnakeControllerCommand);
 
         releasedKeyCodesHandlers.put(KeyEvent.VK_PAGE_DOWN,
-                snakeControllerCommandFactory::createDecreaseVolumeSnakeControllerCommand);*/
+                controllerCommandFactory::createDecreaseVolumeSnakeControllerCommand);*/
     }
 
     @Override
     public void onKeyPressed(final int keyCode) {
-        pressedKeysBitSet.set(keyCode);
     }
 
     @Override
     public void onKeyReleased(final int keyCode) {
-        releasedKeysBitSet.set(keyCode);
+
     }
 
 
     @Override
     public void onUIEvent(UIEvent event) {
-        releasedKeysBitSet.set(event.ordinal());
+        uiEventBitSet.add(event);
     }
 
     @Override
-    public List<SnakeControllerCommand> handleInputs() {
-        return ListUtils.union(getCommandsFromKeys(pressedKeysBitSet, pressedKeyCodesHandlers),
-                getCommandsFromKeys(releasedKeysBitSet, releasedKeyCodesHandlers));
+    public List<SnakeControllerCommand<AndroidSnakeImpl>> handleInputs() {
+        return getCommandsFromKeys(uiEventBitSet, pressedKeyCodesHandlers);
     }
 
     @Override
     public void reset() {
-        pressedKeysBitSet.clear();
-        releasedKeysBitSet.clear();
+        uiEventBitSet.clear();
     }
 
-    private List<SnakeControllerCommand> getCommandsFromKeys(final BitSet bitSet,
-                                                             final Map<UIEvent, Supplier<SnakeControllerCommand>> keyCodesHandlers) {
+    private List<SnakeControllerCommand<AndroidSnakeImpl>> getCommandsFromKeys(final Set<UIEvent> uiEventSet,
+                                                             final Map<UIEvent, Supplier<SnakeControllerCommand<AndroidSnakeImpl>>> uiEventHandlers) {
 
-        if (bitSet.isEmpty()) {
+        if (uiEventSet.isEmpty()) {
             return Collections.emptyList();
         }
 
-        return keyCodesHandlers.keySet().stream().filter(keyCode -> isKeyTriggered(keyCode, bitSet))
-                .map(keyCode -> getCommandFromKeyCode(keyCodesHandlers, keyCode)).collect(Collectors.toList());
+        return uiEventHandlers.keySet().stream().filter(keyCode -> isKeyTriggered(keyCode, uiEventSet))
+                .map(keyCode -> getCommandFromKeyCode(uiEventHandlers, keyCode)).collect(Collectors.toList());
     }
 
-    private SnakeControllerCommand getCommandFromKeyCode(
-            final Map<UIEvent, Supplier<SnakeControllerCommand>> keyCodesHandlers, final UIEvent keyCode) {
+    private SnakeControllerCommand<AndroidSnakeImpl> getCommandFromKeyCode(
+            final Map<UIEvent, Supplier<SnakeControllerCommand<AndroidSnakeImpl>>> keyCodesHandlers, final UIEvent keyCode) {
         return keyCodesHandlers.get(keyCode).get();
     }
 
-    private boolean isKeyTriggered(final UIEvent keyCode, final BitSet bitSet) {
-        return bitSet.get(keyCode.ordinal());
+    private boolean isKeyTriggered(final UIEvent keyCode, final Set<UIEvent> uiEventSet) {
+        return uiEventSet.contains(keyCode);
     }
 
 }

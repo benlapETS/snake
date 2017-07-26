@@ -18,7 +18,7 @@ public final class AndroidSnakeUIConstants {
 
     public static String TAP_ANYWHERE = "Tap anywhere to start";
 
-    public static final String ZERO = "0".intern();
+    public static final String ZERO = "0";
 
     private AndroidSnakeUIConstants() {
         throw new IllegalAccessError();

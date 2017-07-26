@@ -2,18 +2,14 @@ package com.etsmtl.ca.log530.snake.model;
 
 import android.graphics.Point;
 
-import com.google.common.collect.Lists;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import spypunk.snake.constants.SnakeConstants;
-import spypunk.snake.model.Direction;
 import spypunk.snake.model.SnakeEvent;
 import spypunk.snake.model.SnakeInstance;
 import spypunk.snake.model.State;
@@ -23,7 +19,7 @@ import spypunk.snake.model.Type;
  * Created by gabar on 2017-07-24.
  */
 
-public class AndroidSnakeInstanceImpl implements SnakeInstance<Point, AndroidSnakeDirection> {
+public class AndroidSnakeInstanceImpl extends SnakeInstance<Point, AndroidSnakeDirection> {
     private int score;
 
     private int speed;
@@ -32,13 +28,9 @@ public class AndroidSnakeInstanceImpl implements SnakeInstance<Point, AndroidSna
 
     private int currentMovementFrame;
 
-    private List<SnakeEvent> snakeEvents = Lists.newArrayList();
-
     private AndroidSnakePosition position;
 
     private AndroidSnakeDirection snakeDirection;
-
-    private Optional<? extends AndroidSnakeDirection> newSnakeDirection = Optional.empty();
 
     private AndroidSnakeFood food;
 
@@ -75,10 +67,6 @@ public class AndroidSnakeInstanceImpl implements SnakeInstance<Point, AndroidSna
         this.state = state;
     }
 
-    public List<SnakeEvent> getSnakeEvents() {
-        return snakeEvents;
-    }
-
     public int getCurrentMovementFrame() {
         return currentMovementFrame;
     }
@@ -98,16 +86,6 @@ public class AndroidSnakeInstanceImpl implements SnakeInstance<Point, AndroidSna
 
     }
 
-
-    public Optional<? extends AndroidSnakeDirection> getNewSnakeDirection() {
-        return newSnakeDirection;
-    }
-
-    @Override
-    public void setNewSnakeDirection(Optional<? extends AndroidSnakeDirection> newSnakeDirection) {
-        this.newSnakeDirection = newSnakeDirection;
-    }
-
     public int getFramesSinceLastFood() {
         return framesSinceLastFood;
     }
@@ -121,7 +99,7 @@ public class AndroidSnakeInstanceImpl implements SnakeInstance<Point, AndroidSna
     }
 
     public void clearSnakeEvents() {
-        snakeEvents.clear();
+        getSnakeEvents().clear();
     }
 
     public void updateFrames() {
@@ -140,7 +118,7 @@ public class AndroidSnakeInstanceImpl implements SnakeInstance<Point, AndroidSna
     }
 
     public void addSnakeEvents(SnakeEvent evt) {
-        snakeEvents.add(evt);
+        getSnakeEvents().add(evt);
     }
 
     public void resetCurrentMovementFrame() {
@@ -180,7 +158,7 @@ public class AndroidSnakeInstanceImpl implements SnakeInstance<Point, AndroidSna
             position.expand();
             updateScore();
             updateStatistics();
-            snakeEvents.add(SnakeEvent.FOOD_EATEN);
+            getSnakeEvents().add(SnakeEvent.FOOD_EATEN);
             produceNewFood(gridLocations);
         }
     }

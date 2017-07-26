@@ -3,13 +3,12 @@ package com.etsmtl.ca.log530.snake.model;
 import java.net.URI;
 
 import spypunk.snake.model.Snake;
-import spypunk.snake.model.SnakeInstance;
 
 /**
  * Created by gabar on 2017-07-24.
  */
 
-public class AndroidSnakeImpl implements Snake<AndroidSnakeInstanceImpl> {
+public class AndroidSnakeImpl extends Snake<AndroidSnakeInstanceImpl> {
 
     private String name;
 

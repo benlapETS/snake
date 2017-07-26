@@ -1,6 +1,7 @@
 package com.etsmtl.ca.log530.snake.factory;
 
 import com.etsmtl.ca.log530.snake.model.AndroidBuilder;
+import com.etsmtl.ca.log530.snake.model.AndroidSnakeImpl;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,32 +11,31 @@ import java.util.Properties;
 import javax.inject.Singleton;
 
 import spypunk.snake.exception.SnakeException;
-import spypunk.snake.factory.SnakeFactory;
-import spypunk.snake.model.Snake;
 
 /**
  * Created by gabar on 2017-07-24.
  */
 
 @Singleton
-public class AndroidSnakeFactoryImpl implements SnakeFactory {
+public class AndroidSnakeFactoryImpl extends AndroidSnakeFactory {
 
-    private static final String NAME_KEY = "name".intern();
+    private static final String NAME_KEY = "name";
 
-    private static final String VERSION_KEY = "version".intern();
+    private static final String VERSION_KEY = "version";
 
-    private static final String URL_KEY = "url".intern();
+    private static final String URL_KEY = "url";
 
-    private static final String SNAKE_PROPERTIES = "/snake.properties".intern();
+    private static final String SNAKE_PROPERTIES = "/snake.properties";
 
-    private final String name;
+    //TODO get properties from somewhere
+    private final String name = "Snake";
 
-    private final String version;
+    private final String version = "2.0";
 
-    private final URI uri;
+    private final URI uri = URI.create("");
 
     public AndroidSnakeFactoryImpl() {
-        try (InputStream inputStream = AndroidSnakeFactoryImpl.class.getResource(SNAKE_PROPERTIES).openStream()) {
+        /*try (InputStream inputStream = AndroidSnakeFactoryImpl.class.getResource(SNAKE_PROPERTIES).openStream()) {
             final Properties properties = new Properties();
 
             properties.load(inputStream);
@@ -46,11 +46,11 @@ public class AndroidSnakeFactoryImpl implements SnakeFactory {
         } catch (final IOException e) {
             //TODO handle logging
             throw new SnakeException(e);
-        }
+        }*/
     }
 
     @Override
-    public Snake createSnake() {
+    public AndroidSnakeImpl createSnake() {
         return AndroidBuilder.instance().setName(name).setVersion(version).setProjectURI(uri).build();
     }
 }

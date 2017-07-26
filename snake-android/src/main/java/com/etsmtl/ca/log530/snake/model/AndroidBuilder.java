@@ -2,15 +2,13 @@ package com.etsmtl.ca.log530.snake.model;
 
 import java.net.URI;
 
-import spypunk.snake.model.Snake;
-
 /**
  * Created by gabar on 2017-07-24.
  */
 
 public final class AndroidBuilder {
 
-    private final Snake snake = new AndroidSnakeImpl();
+    private final AndroidSnakeImpl snake = new AndroidSnakeImpl();
 
     private AndroidBuilder() {
     }
@@ -34,7 +32,7 @@ public final class AndroidBuilder {
         return this;
     }
 
-    public Snake build() {
+    public AndroidSnakeImpl build() {
         return snake;
     }
 

@@ -1,11 +1,17 @@
-<ScalingLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.etsmtl.ca.log530.snake.ui.layout.ScalingLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:background="#000000"
-    tools:context="com.etsmtl.ca.log530.snake.App">
+    tools:context="com.etsmtl.ca.log530.snake.SnakeGameActivity">
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-    <com.etsmtl.ca.log530.snake.ui android:id="@+id/game_view" android:layout_width="match_parent"
+
+    <com.etsmtl.ca.log530.snake.ui.AndroidSnakeInstanceGameView
+        android:id="@+id/game_view"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </com.etsmtl.ca.log530.snake.ui>
-</ScalingLinearLayout>
+    </com.etsmtl.ca.log530.snake.ui.AndroidSnakeInstanceGameView>
+    <Button
+        android:id="@+id/button_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+</com.etsmtl.ca.log530.snake.ui.layout.ScalingLinearLayout>

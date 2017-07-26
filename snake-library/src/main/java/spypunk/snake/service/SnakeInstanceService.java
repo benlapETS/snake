@@ -14,13 +14,13 @@ import spypunk.snake.model.Direction;
 
 
 
-public interface SnakeInstanceService {
+public interface SnakeInstanceService<A extends Snake, D extends Direction, I extends SnakeInstance> {
 
-    void create(Snake snake);
+    void create(A snake);
 
-    void update(SnakeInstance snakeInstance);
+    void update(I snakeInstance);
 
-    void updateDirection(SnakeInstance snakeInstance, Direction direction);
+    void updateDirection(I snakeInstance, D direction);
 
-    void pause(SnakeInstance snakeInstance);
+    void pause(I snakeInstance);
 }

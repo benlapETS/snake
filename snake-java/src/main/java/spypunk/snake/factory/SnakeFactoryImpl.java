@@ -21,20 +21,20 @@ import org.slf4j.LoggerFactory;
 import spypunk.snake.Main;
 import spypunk.snake.exception.SnakeException;
 import spypunk.snake.model.Builder;
-import spypunk.snake.model.Snake;
+import spypunk.snake.model.SnakeImpl;
 
 @Singleton
-public class SnakeFactoryImpl implements SnakeFactory {
+public class SnakeFactoryImpl extends AWTSnakeFactory {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
-    private static final String NAME_KEY = "name".intern();
+    private static final String NAME_KEY = "name";
 
-    private static final String VERSION_KEY = "version".intern();
+    private static final String VERSION_KEY = "version";
 
-    private static final String URL_KEY = "url".intern();
+    private static final String URL_KEY = "url";
 
-    private static final String SNAKE_PROPERTIES = "/snake.properties".intern();
+    private static final String SNAKE_PROPERTIES = "/snake.properties";
 
     private final String name;
 
@@ -58,7 +58,7 @@ public class SnakeFactoryImpl implements SnakeFactory {
     }
 
     @Override
-    public Snake createSnake() {
+    public SnakeImpl createSnake() {
         return Builder.instance().setName(name).setVersion(version).setProjectURI(uri).build();
     }
 }

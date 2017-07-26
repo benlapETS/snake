@@ -1,58 +1,45 @@
 package com.etsmtl.ca.log530.snake.controller.gameloop;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import com.etsmtl.ca.log530.snake.ui.controller.AndroidSnakeController;
+import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
+
+import java.util.Optional;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import spypunk.snake.controller.gameloop.SnakeControllerGameLoop;
-import spypunk.snake.ui.controller.input.SnakeController;
+
 
 /**
  * Created by gabar on 2017-07-24.
  */
 
 @Singleton
-public final class AndroidSnakeControllerGameLoopImpl implements SnakeControllerGameLoop, Runnable {
+public final class AndroidSnakeControllerGameLoopImpl implements SnakeControllerGameLoop {
 
-    private static final int SKIP_TICKS = 14;
+    private OnGameLoopUpdateListener listener;
 
-    private final ExecutorService executorService;
+    private Optional<GameLoopThread> gameLoopThread = Optional.empty();
 
-    private final SnakeController snakeController;
-
-    private volatile boolean running;
-
-    @Inject
-    public AndroidSnakeControllerGameLoopImpl(final SnakeController snakeController) {
-        executorService = Executors.newSingleThreadExecutor();
-        this.snakeController = snakeController;
+    @Override
+    public void setOnGameLoopUpdateListener(OnGameLoopUpdateListener listener) {
+        this.listener = listener;
+        gameLoopThread.ifPresent(thread->thread.setOnGameLoopUpdateListener(listener));
     }
 
     @Override
     public void start() {
-        running = true;
-        executorService.execute(this);
+        if(!gameLoopThread.isPresent()){
+            gameLoopThread = Optional.of(new GameLoopThread(listener));
+            gameLoopThread.get().start();
+        }
     }
 
     @Override
     public void stop() {
-        running = false;
-        executorService.shutdown();
+        gameLoopThread.get().terminate();
+        gameLoopThread = null;
     }
 
-    @Override
-    public void run() {
-        while (running) {
-
-            try {
-                Thread.sleep(SKIP_TICKS);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            snakeController.onGameLoopUpdate();
-        }
-    }
 }

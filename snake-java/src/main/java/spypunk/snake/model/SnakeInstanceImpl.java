@@ -13,15 +13,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import com.google.common.collect.Lists;
-
 import spypunk.snake.constants.SnakeConstants;
 
-public class SnakeInstanceImpl implements SnakeInstance<Point, SnakeDirection>{
+public class SnakeInstanceImpl extends SnakeInstance<Point, SnakeDirection>{
     private int score;
 
     private int speed;
@@ -30,13 +27,9 @@ public class SnakeInstanceImpl implements SnakeInstance<Point, SnakeDirection>{
 
     private int currentMovementFrame;
 
-    private List<SnakeEvent> snakeEvents = Lists.newArrayList();
-
   private SnakePosition position;
 
     private SnakeDirection snakeDirection;
-
-    private Optional<? extends SnakeDirection> newSnakeDirection = Optional.empty();
 
     private SnakeFood food;
 
@@ -73,10 +66,6 @@ public class SnakeInstanceImpl implements SnakeInstance<Point, SnakeDirection>{
         this.state = state;
     }
 
-    public List<SnakeEvent> getSnakeEvents() {
-        return snakeEvents;
-    }
-
     public int getCurrentMovementFrame() {
         return currentMovementFrame;
     }
@@ -96,16 +85,6 @@ public class SnakeInstanceImpl implements SnakeInstance<Point, SnakeDirection>{
 
   }
 
-
-  public Optional<? extends SnakeDirection> getNewSnakeDirection() {
-        return newSnakeDirection;
-    }
-
-  @Override
-  public void setNewSnakeDirection(Optional<? extends SnakeDirection> newSnakeDirection) {
-    this.newSnakeDirection = newSnakeDirection;
-  }
-
   public int getFramesSinceLastFood() {
         return framesSinceLastFood;
     }
@@ -119,7 +98,7 @@ public class SnakeInstanceImpl implements SnakeInstance<Point, SnakeDirection>{
     }
 
   public void clearSnakeEvents() {
-    snakeEvents.clear();
+    getSnakeEvents().clear();
   }
 
   public void updateFrames() {
@@ -138,7 +117,7 @@ public class SnakeInstanceImpl implements SnakeInstance<Point, SnakeDirection>{
   }
 
   public void addSnakeEvents(SnakeEvent evt) {
-    snakeEvents.add(evt);
+    getSnakeEvents().add(evt);
   }
 
   public void resetCurrentMovementFrame() {
@@ -178,7 +157,7 @@ public class SnakeInstanceImpl implements SnakeInstance<Point, SnakeDirection>{
       position.expand();
       updateScore();
       updateStatistics();
-      snakeEvents.add(SnakeEvent.FOOD_EATEN);
+      getSnakeEvents().add(SnakeEvent.FOOD_EATEN);
       produceNewFood(gridLocations);
     }
   }

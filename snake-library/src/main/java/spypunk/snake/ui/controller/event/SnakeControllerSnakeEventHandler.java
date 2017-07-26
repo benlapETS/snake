@@ -14,7 +14,7 @@ import spypunk.snake.model.SnakeEvent;
 import spypunk.snake.ui.controller.command.SnakeControllerCommand;
 
 @FunctionalInterface
-public interface SnakeControllerSnakeEventHandler {
+public interface SnakeControllerSnakeEventHandler<S> {
 
-    List<SnakeControllerCommand> handleEvents(List<SnakeEvent> snakeEvents);
+    List<SnakeControllerCommand<S>> handleEvents(List<SnakeEvent> snakeEvents);
 }

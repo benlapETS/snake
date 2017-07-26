@@ -1,6 +1,5 @@
 package spypunk.snake.model;
 
-import java.awt.Point;
 import java.util.Deque;
 
 /**
