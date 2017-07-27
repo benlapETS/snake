@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Snake</string>
-    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_button">Start</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="button_continue_text">Continue</string>
     <string name="button_start_text">Start</string>
+
+    <string name="title_activity_fullscreen">Snake</string>
 </resources>

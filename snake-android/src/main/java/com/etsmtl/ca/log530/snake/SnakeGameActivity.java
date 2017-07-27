@@ -1,43 +1,33 @@
 package com.etsmtl.ca.log530.snake;
 
 import android.annotation.SuppressLint;
-import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.os.Handler;
 import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
-import com.etsmtl.ca.log530.snake.factory.AndroidSnakeFactory;
-import com.etsmtl.ca.log530.snake.model.AndroidSnakeImpl;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeInstanceImpl;
 import com.etsmtl.ca.log530.snake.service.AndroidSnakeInstanceService;
 import com.etsmtl.ca.log530.snake.ui.AndroidSnakeInstanceGameView;
 import com.etsmtl.ca.log530.snake.ui.controller.AndroidSnakeController;
-import com.etsmtl.ca.log530.snake.ui.controller.event.AndroidSnakeControllerSnakeEventHandler;
 import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
 import com.etsmtl.ca.log530.snake.ui.input.AndroidSnakeControllerInputHandler;
 import com.etsmtl.ca.log530.snake.ui.input.listener.OnSwipeListener;
 import com.etsmtl.ca.log530.snake.ui.input.listener.SwipeDirection;
 
-import org.apache.commons.collections4.CollectionUtils;
-
-import java.util.Collection;
-import java.util.List;
-
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
-import spypunk.snake.controller.gameloop.SnakeControllerGameLoop;
-import spypunk.snake.model.SnakeEvent;
-import spypunk.snake.model.State;
-import spypunk.snake.ui.controller.command.SnakeControllerCommand;
-import spypunk.snake.ui.controller.input.SnakeController;
 import spypunk.snake.ui.event.UIEvent;
+
 /**
- * A full screen activity with swipe events and game control logic.
+ * An example full-screen activity that shows and hides the system UI (i.e.
+ * status bar and navigation/system bar) with user interaction.
  */
 public class SnakeGameActivity extends AppCompatActivity {
     /**
@@ -58,21 +48,25 @@ public class SnakeGameActivity extends AppCompatActivity {
      */
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
-    private View mContentView;
-    private final Runnable mHidePart2Runnable = () -> {
-        // Delayed removal of status and navigation bar
+    private AndroidSnakeInstanceGameView mContentView;
+    private final Runnable mHidePart2Runnable = new Runnable() {
+        @SuppressLint("InlinedApi")
+        @Override
+        public void run() {
+            // Delayed removal of status and navigation bar
 
-        // Note that some of these constants are new as of API 16 (Jelly Bean)
-        // and API 19 (KitKat). It is safe to use them, as they are inlined
-        // at compile-time and do nothing on earlier devices.
-        mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
-                | View.SYSTEM_UI_FLAG_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+            // Note that some of these constants are new as of API 16 (Jelly Bean)
+            // and API 19 (KitKat). It is safe to use them, as they are inlined
+            // at compile-time and do nothing on earlier devices.
+            mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+        }
     };
-    private AndroidSnakeInstanceGameView gameView;
+    private View mControlsView;
     private final Runnable mShowPart2Runnable = new Runnable() {
         @Override
         public void run() {
@@ -81,11 +75,11 @@ public class SnakeGameActivity extends AppCompatActivity {
             if (actionBar != null) {
                 actionBar.show();
             }
-            gameView.setVisibility(View.VISIBLE);
+            mControlsView.setVisibility(View.VISIBLE);
         }
     };
     private boolean mVisible;
-    private final Runnable mHideRunnable = this::hide;
+    private final Runnable mHideRunnable = () -> hide();
     /**
      * Touch listener to use for in-layout UI controls to delay hiding the
      * system UI. This is to prevent the jarring behavior of controls going away
@@ -97,7 +91,8 @@ public class SnakeGameActivity extends AppCompatActivity {
         }
         return false;
     };
-
+    //----- END GENERATED MEMBERS -----
+    //----- START CUSTOM MEMBERS  -----
     private GestureDetector gestureDetector;
 
     @Inject
@@ -112,26 +107,53 @@ public class SnakeGameActivity extends AppCompatActivity {
     AndroidSnakeInstanceImpl snakeInstance;
 
     Button button;
+    //----- END CUSTOM MEMBERS    -----
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_fullscreen);
+
         ((SnakeApplication)getApplication()).getAppComponent().inject(this);
 
         ButterKnife.bind(this);
 
-
-
         mVisible = true;
-        gameView = $(R.id.game_view);
+        mControlsView = findViewById(R.id.fullscreen_content_controls);
+        mContentView = $(R.id.game_area);
 
-        //TODO simplify this
-        mContentView = gameView;
-        button = findViewById(R.id.button_continue);
-        button.setText(this.getResources().getString(R.string.button_start_text));
-        //TODO : move this to class?
+        mContentView.setSnake(snakeController.getSnake());
+
+        // Set up the user interaction to manually show or hide the system UI.
+        // Upon interacting with UI controls, delay any scheduled hide()
+        // operations to prevent the jarring behavior of controls going away
+        // while interacting with the UI.
+        button  = $(R.id.dummy_button);
+        button.setOnTouchListener(mDelayHideTouchListener);
+        mContentView.setOnClickListener(view -> {
+            AndroidSnakeInstanceImpl instance = snakeController.getSnake().getSnakeInstance();
+            if (instance != null) {
+                switch(snakeController.getSnake().getSnakeInstance().getState()){
+                    case RUNNING:
+                        //button shouldn't be visible during running
+                        break;
+                    case PAUSED:
+                        //unpause
+                        snakeControllerInputHandler.onUIEvent(UIEvent.PAUSE_TRIGGER);
+                        button.setVisibility(View.GONE);
+                        break;
+                    case GAME_OVER:
+                        snakeControllerInputHandler.onUIEvent(UIEvent.NEW_GAME);
+                        button.setVisibility(View.GONE);
+                        break;
+                }
+            }else{
+                //this is the first new game
+                snakeControllerInputHandler.onUIEvent(UIEvent.NEW_GAME);
+            }
+        });
+
         gestureDetector = new GestureDetector(getApplicationContext(), new OnSwipeListener() {
 
             /**Handles swipe events
@@ -162,55 +184,13 @@ public class SnakeGameActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-        gameView.setSnake(snakeController.getSnake());
-
-
-        //this is where game loop updates sync up to the view
         snakeController.setOnGameLoopUpdateListener(new OnGameLoopUpdateListener() {
             @Override
             public void onGameLoopUpdateEvent() {
-                gameView.update();
+                mContentView.update();
             }
         });
-        button.setOnClickListener(l -> {
-            AndroidSnakeInstanceImpl instance = snakeController.getSnake().getSnakeInstance();
-            if (instance != null) {
-                switch(snakeController.getSnake().getSnakeInstance().getState()){
-                    case RUNNING:
-                        //button shouldn't be visible during running
-                        break;
-                    case PAUSED:
-                        //unpause
-                        snakeControllerInputHandler.onUIEvent(UIEvent.PAUSE_TRIGGER);
-                        button.setVisibility(View.GONE);
-                        break;
-                    case GAME_OVER:
-                        snakeControllerInputHandler.onUIEvent(UIEvent.NEW_GAME);
-                        button.setVisibility(View.GONE);
-                        break;
-                }
-            }else{
-                button.setVisibility(View.GONE);
-
-                snakeControllerInputHandler.onUIEvent(UIEvent.NEW_GAME);
-            }
-        });
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        //trigger pause event
-        //TODO check if multiple pause/stops break it
-        snakeControllerInputHandler.onUIEvent(UIEvent.PAUSE_TRIGGER);
-    }
-
-    @Override
-    public void onStop(){
-        super.onStop();
-        //trigger pause event
-        snakeControllerInputHandler.onUIEvent(UIEvent.PAUSE_TRIGGER);
+        snakeController.start();
     }
 
     @Override
@@ -231,13 +211,36 @@ public class SnakeGameActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        switch (keyCode){
+            case KeyEvent.KEYCODE_S:
+            case KeyEvent.KEYCODE_DPAD_DOWN:
+                snakeControllerInputHandler.onUIEvent(UIEvent.DOWN);
+                return true;
+            case KeyEvent.KEYCODE_A:
+            case KeyEvent.KEYCODE_DPAD_LEFT:
+                snakeControllerInputHandler.onUIEvent(UIEvent.LEFT);
+                return true;
+            case KeyEvent.KEYCODE_D:
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+                snakeControllerInputHandler.onUIEvent(UIEvent.RIGHT);
+                return true;
+            case KeyEvent.KEYCODE_W:
+            case KeyEvent.KEYCODE_DPAD_UP:
+                snakeControllerInputHandler.onUIEvent(UIEvent.UP);
+                return true;
+        }
+        return false;
+    }
+
     private void hide() {
         // Hide UI first
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.hide();
         }
-        gameView.setVisibility(View.GONE);
+        mControlsView.setVisibility(View.GONE);
         mVisible = false;
 
         // Schedule a runnable to remove the status and navigation bar after a delay
@@ -258,14 +261,14 @@ public class SnakeGameActivity extends AppCompatActivity {
     }
 
     /**
-     * Schedules a call to hide() in [delay] milliseconds, canceling any
+     * Schedules a call to hide() in delay milliseconds, canceling any
      * previously scheduled calls.
      */
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
-    //----- Utilities -----
+    //----- OUR ADDED METHODS OR EXTENSIONS-----
     /**
      * Convenience method to cast views.
      * from https://stackoverflow.com/a/22806734
@@ -277,11 +280,24 @@ public class SnakeGameActivity extends AppCompatActivity {
     public <T extends View> T $(int id) {
         return (T) findViewById(id);
     }
-    //----- Gesture handling -----
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        //trigger pause event
+        //TODO check if multiple pause/stops break it
+        snakeControllerInputHandler.onUIEvent(UIEvent.PAUSE_TRIGGER);
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        //trigger pause event
+        snakeControllerInputHandler.onUIEvent(UIEvent.PAUSE_TRIGGER);
+    }
+
     @Override // ------------------------------ Catch the Gesture Event by Overriding onTouch() method: -->
     public boolean onTouchEvent(MotionEvent event) {
         return gestureDetector.onTouchEvent(event);
     }
-
-
 }

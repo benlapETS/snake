@@ -10,20 +10,17 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.ThumbnailUtils;
-import android.os.Looper;
 import android.support.annotation.ColorInt;
 import android.util.AttributeSet;
-import android.util.Log;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 import com.etsmtl.ca.log530.snake.R;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeDirection;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeFood;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeImpl;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeInstanceImpl;
-import com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants;
 import com.google.common.collect.Maps;
 
 import java.util.List;
@@ -40,12 +37,13 @@ import spypunk.snake.ui.view.SnakeGameView;
 import static com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants.*;
 import static com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants.DEFAULT_BORDER_COLOR;
 import static com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants.TAP_ANYWHERE;
+import static com.etsmtl.ca.log530.snake.ui.constants.AndroidSnakeUIConstants.DEFAULT_FONT_COLOR;
 
 /**
  * Created by gabar on 2017-07-24.
  */
 
-public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGameView, ImageCache<Bitmap> {
+public class AndroidSnakeInstanceGameView extends SurfaceView implements SnakeGameView, ImageCache<Bitmap>, SurfaceHolder.Callback {
 
     private static final String PAUSE = "PAUSE";
 
@@ -53,6 +51,8 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
     private static final int SNAKE_FROZEN_FG_COLOR = Color.argb(30, 30, 30, 200);
 
     private static final String GAME_OVER = "GAME OVER";
+    private static final float TEXT_SIZE = 48f;
+    private static final float BORDER_WIDTH = 2f;
 
     private final RectF gridRectangle;
 
@@ -60,9 +60,9 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
 
     private final Typeface frozenFont;
 
-    private final float x;
+    private float x;
 
-    private final float y;
+    private float y;
 
     private int cellSize = CELL_SIZE;
 
@@ -73,9 +73,9 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
 
     private final static Map<SnakePart, Bitmap> imageCache = Maps.newHashMap();
 
-    private AndroidSnakeInstanceImpl snakeInstance;
-
     private Paint gamePaint;
+
+    private Paint strokePaint;
 
     private Bitmap normalFood, bonusFood;
 
@@ -83,7 +83,6 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
 
     public AndroidSnakeInstanceGameView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setWillNotDraw(false);
 
         frozenFont = Typeface.createFromAsset(context.getAssets(),"fonts/neutronium.ttf");
 
@@ -101,17 +100,31 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
         //setIcon(new ImageIcon(image));
 
         gamePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        strokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        strokePaint.setStyle(Paint.Style.STROKE);
         init();
         invalidate();
     }
+    @Override
+    public void surfaceCreated(SurfaceHolder holder){
+        setWillNotDraw(false);
+    }
 
+    @Override
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
+        //what to do here?
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+        //what to do here?
+    }
     /**
      * Set the current snake
      * @param snake the snake graphically handled by this view
      */
     public void setSnake(final AndroidSnakeImpl snake){
         this.snake = snake;
-        snakeInstance = this.snake.getSnakeInstance();
     }
 
     private void init(){
@@ -158,11 +171,22 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
     @Override
     public void onSizeChanged(int w, int h, int oldw, int oldh){
         //fill largest of width or height, since constants could be changed
-        //default to cellsize if w or h = 0
-        if(w==0 || h == 0){
+        //default to cellsize if w or h = 0, we can't do better
+        cellSize = Math.min(h/SnakeConstants.HEIGHT,w/SnakeConstants.WIDTH);
+        if(cellSize == 0){
             cellSize = CELL_SIZE;
         }
-        cellSize = Math.min(h/SnakeConstants.HEIGHT,w/SnakeConstants.WIDTH);
+        float width = SnakeConstants.WIDTH * cellSize + 1;
+        float height = SnakeConstants.HEIGHT * cellSize + 1;
+        float wPadding = (w-width)/2;
+        float hPadding = (h-width)/2;
+        gridRectangle.set(wPadding, hPadding, wPadding+width,
+                hPadding+height);
+
+        frozenGridRectangle.set(wPadding, hPadding, wPadding+width,
+                hPadding+height);
+        x = gridRectangle.left + 1;
+        y = gridRectangle.top + 1;
         init();
         invalidate();
     }
@@ -170,13 +194,16 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
     @Override
     protected  void dispatchDraw(Canvas canvas){
         super.dispatchDraw(canvas);
-        renderSnake(canvas);
-    }
+        Canvas surfaceCanvas = this.getHolder().lockCanvas();
+        renderSnake(surfaceCanvas, snake.getSnakeInstance());
+        this.getHolder().unlockCanvasAndPost(surfaceCanvas);    }
 
     @Override
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
-        renderSnake(canvas);
+        Canvas surfaceCanvas = this.getHolder().lockCanvas();
+        renderSnake(surfaceCanvas, snake.getSnakeInstance());
+        this.getHolder().unlockCanvasAndPost(surfaceCanvas);
     }
 
     @Override
@@ -187,11 +214,26 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        int width = getMeasuredWidth();
-        int height = getMeasuredHeight();
-        cellSize = Math.min(height/SnakeConstants.HEIGHT,width/SnakeConstants.WIDTH);
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        cellSize = Math.min(measuredHeight/SnakeConstants.HEIGHT,measuredWidth/SnakeConstants.WIDTH);
+        if(cellSize == 0){
+            //default to defined size
+            cellSize = CELL_SIZE;
+        }
+        float width = SnakeConstants.WIDTH * cellSize + 1;
+        float height = SnakeConstants.HEIGHT * cellSize + 1;
+        float wPadding = (measuredWidth-width)/2;
+        float hPadding = (measuredHeight-height)/2;
+        gridRectangle.set(wPadding, hPadding, wPadding+width,
+                hPadding+height);
+        x = gridRectangle.left + 1;
+        y = gridRectangle.top + 1;
+        frozenGridRectangle.set(wPadding, hPadding, wPadding+width,
+                hPadding+height);
 
-        setMeasuredDimension(width, height);
+        setMeasuredDimension(measuredWidth, measuredHeight);
+        init();
     }
 
     @Override
@@ -200,11 +242,12 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
         postInvalidate();
     }
 
-    private void renderSnake(final Canvas graphics) {
-        gamePaint.setColor(DEFAULT_BORDER_COLOR);
+    private void renderSnake(final Canvas graphics, AndroidSnakeInstanceImpl snakeInstance) {
+        graphics.drawColor(Color.BLACK);
+        strokePaint.setColor(DEFAULT_BORDER_COLOR);
+        strokePaint.setStrokeWidth(BORDER_WIDTH);
         //draw border
-        graphics.drawRect(gridRectangle,gamePaint);
-
+        graphics.drawRect(gridRectangle,strokePaint);
         if (snakeInstance == null) {
             //if we have time we can make a dialog
             renderSnakeNew(graphics);
@@ -220,16 +263,10 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
 
         renderFood(graphics, snakeInstance);
 
-        final State state = snakeInstance.getState();
+        lastState = snakeInstance.getState();
 
-        if (!State.RUNNING.equals(state)) {
-            lastState = state;
-            renderSnakeFrozen(graphics, state);
-        }else if(State.PAUSED.equals(lastState)){
-            graphics.restore();
-        }else if(lastState == null || State.GAME_OVER.equals(lastState)){
-            //clear view after restarting a game or starting a new one
-            graphics.drawColor(Color.BLACK);
+        if (!State.RUNNING.equals(lastState)) {
+            renderSnakeFrozen(graphics, lastState);
         }
     }
 
@@ -322,7 +359,7 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
             final float x1 = x + location.x * cellSize;
             final float y1 = y + location.y * cellSize;
 
-            rectangle = new RectF(x1, y1, cellSize, cellSize);
+            rectangle = new RectF(x1, y1, x1+cellSize, y1+cellSize);
 
             rectanglesCache.put(location, rectangle);
         } else {
@@ -335,15 +372,22 @@ public class AndroidSnakeInstanceGameView extends ViewGroup implements SnakeGame
     private void renderSnakeNew(final Canvas graphics) {
         gamePaint.setTextAlign(Paint.Align.CENTER);
         gamePaint.setTypeface(frozenFont);
+        gamePaint.setTextSize(TEXT_SIZE);
+        gamePaint.setColor(DEFAULT_FONT_COLOR);
         graphics.drawText(TAP_ANYWHERE, graphics.getWidth() / 2, (int) ((graphics.getHeight() / 2) - ((gamePaint.descent() + gamePaint.ascent()) / 2)) , gamePaint);
+        gamePaint.reset();
     }
 
     private void renderSnakeFrozen(final Canvas graphics, final State state) {
-        graphics.save();
         gamePaint.setColor(SNAKE_FROZEN_FG_COLOR);
         graphics.drawRect(frozenGridRectangle, gamePaint);
+        gamePaint.setTextAlign(Paint.Align.CENTER);
+        gamePaint.setTypeface(frozenFont);
+        gamePaint.setTextSize(TEXT_SIZE);
+        gamePaint.setColor(DEFAULT_FONT_COLOR);
 
         graphics.drawText(State.GAME_OVER.equals(state) ? GAME_OVER : PAUSE, graphics.getWidth() / 2, (int) ((graphics.getHeight() / 2) - ((gamePaint.descent() + gamePaint.ascent()) / 2)) , gamePaint);
+        gamePaint.reset();
     }
     //this is not used
     @Override
