@@ -15,6 +15,7 @@
         <activity
             android:name=".SnakeGameActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"
             android:label="@string/title_activity_fullscreen"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
