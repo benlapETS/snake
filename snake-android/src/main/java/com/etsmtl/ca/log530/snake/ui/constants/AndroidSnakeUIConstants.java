@@ -15,7 +15,7 @@ public final class AndroidSnakeUIConstants {
     public static final int DEFAULT_FONT_COLOR = Color.LTGRAY;
     @ColorInt
     public static final int DEFAULT_BORDER_COLOR = Color.GRAY;
-
+    //TODO : move to string resources
     public static String TAP_ANYWHERE = "Tap anywhere to start";
 
     public static final String ZERO = "0";

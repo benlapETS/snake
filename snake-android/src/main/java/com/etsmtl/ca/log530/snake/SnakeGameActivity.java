@@ -14,6 +14,7 @@ import android.widget.Button;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeInstanceImpl;
 import com.etsmtl.ca.log530.snake.service.AndroidSnakeInstanceService;
 import com.etsmtl.ca.log530.snake.ui.AndroidSnakeInstanceGameView;
+import com.etsmtl.ca.log530.snake.ui.AndroidSnakeInstanceHudView;
 import com.etsmtl.ca.log530.snake.ui.controller.AndroidSnakeController;
 import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
 import com.etsmtl.ca.log530.snake.ui.input.AndroidSnakeControllerInputHandler;
@@ -49,6 +50,7 @@ public class SnakeGameActivity extends AppCompatActivity {
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
     private AndroidSnakeInstanceGameView mContentView;
+    private AndroidSnakeInstanceHudView hudView;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -122,8 +124,10 @@ public class SnakeGameActivity extends AppCompatActivity {
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = $(R.id.game_area);
+        //hudView = $(R.id.hud_view);
 
         mContentView.setSnake(snakeController.getSnake());
+        //hudView.setSnake(snakeController.getSnake());
 
         // Set up the user interaction to manually show or hide the system UI.
         // Upon interacting with UI controls, delay any scheduled hide()
@@ -188,6 +192,7 @@ public class SnakeGameActivity extends AppCompatActivity {
             @Override
             public void onGameLoopUpdateEvent() {
                 mContentView.update();
+                //hudView.update();
             }
         });
         snakeController.start();
