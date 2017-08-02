@@ -1,6 +1,6 @@
 package com.etsmtl.ca.log530.snake.controller.gameloop;
 
-import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
+import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameEventListener;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -16,15 +16,15 @@ public class GameLoopThread extends Thread {
 
     private volatile ExecutorService executorService;
 
-    public void setOnGameLoopUpdateListener(OnGameLoopUpdateListener onGameLoopUpdateListener) {
-        this.onGameLoopUpdateListener = onGameLoopUpdateListener;
+    public void setOnGameEventListener(OnGameEventListener onGameEventListener) {
+        this.onGameEventListener = onGameEventListener;
     }
 
-    private OnGameLoopUpdateListener onGameLoopUpdateListener;
+    private OnGameEventListener onGameEventListener;
 
-    public GameLoopThread(OnGameLoopUpdateListener onGameLoopUpdateListener) {
+    public GameLoopThread(OnGameEventListener onGameEventListener) {
         super();
-        this.onGameLoopUpdateListener = onGameLoopUpdateListener;
+        this.onGameEventListener = onGameEventListener;
         executorService = Executors.newSingleThreadExecutor();
     }
 
@@ -53,7 +53,7 @@ public class GameLoopThread extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            onGameLoopUpdateListener.onGameLoopUpdateEvent();
+            onGameEventListener.onGameLoopUpdateEvent();
         }
     }
 }

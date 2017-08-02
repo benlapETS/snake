@@ -7,6 +7,7 @@ import com.etsmtl.ca.log530.snake.factory.AndroidSnakeFactory;
 import com.etsmtl.ca.log530.snake.factory.AndroidSnakeFactoryImpl;
 import com.etsmtl.ca.log530.snake.service.AndroidSnakeInstanceService;
 import com.etsmtl.ca.log530.snake.service.AndroidSnakeInstanceServiceImpl;
+import com.etsmtl.ca.log530.snake.sound.AndroidSoundService;
 import com.etsmtl.ca.log530.snake.ui.controller.AndroidSnakeController;
 import com.etsmtl.ca.log530.snake.ui.controller.AndroidSnakeControllerImpl;
 import com.etsmtl.ca.log530.snake.ui.controller.event.AndroidSnakeControllerSnakeEventHandler;
@@ -60,8 +61,8 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    public AndroidControllerCommandFactory provideControllerCommandFactory(AndroidSnakeInstanceService snakeInstanceService){
-        return new AndroidControllerCommandFactoryImpl(snakeInstanceService);
+    public AndroidControllerCommandFactory provideControllerCommandFactory(AndroidSnakeInstanceService snakeInstanceService, AndroidSoundService soundService){
+        return new AndroidControllerCommandFactoryImpl(snakeInstanceService, soundService);
     }
     @Provides
     @Singleton
@@ -73,5 +74,11 @@ public class ApplicationModule {
     @Singleton
     public SnakeControllerGameLoop provideSnakeControllerGameLoop(){
         return new AndroidSnakeControllerGameLoopImpl();
+    }
+
+    @Provides
+    @Singleton
+    public AndroidSoundService provideSoundService(){
+        return new AndroidSoundService();
     }
 }

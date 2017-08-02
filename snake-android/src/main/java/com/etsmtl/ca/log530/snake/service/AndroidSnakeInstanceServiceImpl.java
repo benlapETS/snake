@@ -52,6 +52,7 @@ public class AndroidSnakeInstanceServiceImpl extends AndroidSnakeInstanceService
     @Override
     public void pause(final AndroidSnakeInstanceImpl snakeInstance) {
         snakeInstance.togglePause();
+
     }
 
     @Override

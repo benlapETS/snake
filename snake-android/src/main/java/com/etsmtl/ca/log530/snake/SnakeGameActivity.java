@@ -1,6 +1,9 @@
 package com.etsmtl.ca.log530.snake;
 
 import android.annotation.SuppressLint;
+import android.media.AudioAttributes;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,12 +14,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
+import com.etsmtl.ca.log530.snake.factory.AndroidSnakeFactory;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeInstanceImpl;
 import com.etsmtl.ca.log530.snake.service.AndroidSnakeInstanceService;
+import com.etsmtl.ca.log530.snake.sound.AndroidSoundService;
 import com.etsmtl.ca.log530.snake.ui.AndroidSnakeInstanceGameView;
 import com.etsmtl.ca.log530.snake.ui.AndroidSnakeInstanceHudView;
 import com.etsmtl.ca.log530.snake.ui.controller.AndroidSnakeController;
-import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
+import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameEventListener;
+import com.etsmtl.ca.log530.snake.ui.factory.AndroidControllerCommandFactory;
 import com.etsmtl.ca.log530.snake.ui.input.AndroidSnakeControllerInputHandler;
 import com.etsmtl.ca.log530.snake.ui.input.listener.OnSwipeListener;
 import com.etsmtl.ca.log530.snake.ui.input.listener.SwipeDirection;
@@ -51,6 +57,7 @@ public class SnakeGameActivity extends AppCompatActivity {
     private final Handler mHideHandler = new Handler();
     private AndroidSnakeInstanceGameView mContentView;
     private AndroidSnakeInstanceHudView hudView;
+    private SoundPool gamePool;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -109,6 +116,9 @@ public class SnakeGameActivity extends AppCompatActivity {
     AndroidSnakeInstanceImpl snakeInstance;
 
     Button button;
+
+    @Inject
+    AndroidSoundService soundService;
     //----- END CUSTOM MEMBERS    -----
 
     @Override
@@ -125,6 +135,18 @@ public class SnakeGameActivity extends AppCompatActivity {
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = $(R.id.game_area);
         //hudView = $(R.id.hud_view);
+
+        AudioAttributes attributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+        gamePool = new SoundPool.Builder()
+                .setAudioAttributes(attributes).setMaxStreams(5)
+                .build();
+
+        soundService.setBackgroundMediaPlayer(MediaPlayer.create(this,R.raw.background));
+        soundService.setGameOverMediaPlayer(MediaPlayer.create(this,R.raw.game_over));
+        soundService.setFoodEatenMediaPlayer(MediaPlayer.create(this,R.raw.food_eaten));
 
         mContentView.setSnake(snakeController.getSnake());
         //hudView.setSnake(snakeController.getSnake());
@@ -188,7 +210,9 @@ public class SnakeGameActivity extends AppCompatActivity {
                 return true;
             }
         });
-        snakeController.setOnGameLoopUpdateListener(new OnGameLoopUpdateListener() {
+
+        mContentView.setOnTouchListener((view, motionEvent) -> gestureDetector.onTouchEvent(motionEvent));
+        snakeController.setOnGameLoopUpdateListener(new OnGameEventListener() {
             @Override
             public void onGameLoopUpdateEvent() {
                 mContentView.update();

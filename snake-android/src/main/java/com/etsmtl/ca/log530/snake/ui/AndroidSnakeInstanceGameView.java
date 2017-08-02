@@ -68,7 +68,7 @@ public class AndroidSnakeInstanceGameView extends SurfaceView implements SnakeGa
     private int imageSize = AndroidSnakeUIConstants.CELL_SIZE;
     private float scoreFontSize;
     private AndroidSnakeImpl snake;
-    private Paint gamePaint, statPaint = new Paint(), scorePaint = new Paint();
+    private Paint gamePaint, statPaint = new Paint(Paint.ANTI_ALIAS_FLAG), scorePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private static int MIN_PADDING = 20;
     private Typeface statFont;
     private RectF statRectangle;

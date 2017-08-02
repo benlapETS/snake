@@ -5,7 +5,7 @@ import com.etsmtl.ca.log530.snake.model.AndroidSnakeImpl;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeInstanceImpl;
 import com.etsmtl.ca.log530.snake.service.AndroidSnakeInstanceService;
 import com.etsmtl.ca.log530.snake.ui.controller.event.AndroidSnakeControllerSnakeEventHandler;
-import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
+import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameEventListener;
 import com.etsmtl.ca.log530.snake.ui.input.AndroidSnakeControllerInputHandler;
 
 import org.apache.commons.collections4.CollectionUtils;
@@ -48,7 +48,7 @@ public class AndroidSnakeControllerImpl extends AndroidSnakeController {
         this.snakeControllerInputHandler = snakeControllerInputHandler;
         this.snakeControllerSnakeEventHandler = snakeControllerSnakeEventHandler;
         this.snakeControllerGameLoop = snakeControllerGameLoop;
-        this.snakeControllerGameLoop.setOnGameLoopUpdateListener(new OnGameLoopUpdateListener() {
+        this.snakeControllerGameLoop.setOnGameLoopUpdateListener(new OnGameEventListener() {
             @Override
             public void onGameLoopUpdateEvent() {
                 onGameLoopUpdate();
@@ -100,7 +100,7 @@ public class AndroidSnakeControllerImpl extends AndroidSnakeController {
                     snakeControllerSnakeEventHandler.handleEvents(snakeEvents));
         }
 
-        this.getUpdateListener().ifPresent(OnGameLoopUpdateListener::onGameLoopUpdateEvent);
+        this.getUpdateListener().ifPresent(OnGameEventListener::onGameLoopUpdateEvent);
     }
 
 
@@ -121,5 +121,25 @@ public class AndroidSnakeControllerImpl extends AndroidSnakeController {
     @Override
     public void stop() {
         snakeControllerGameLoop.stop();
+    }
+
+    @Override
+    public void onFoodEaten() {
+        this.getUpdateListener().ifPresent(OnGameEventListener::onFoodEatenEvent);
+    }
+
+    @Override
+    public void onGameOver() {
+        this.getUpdateListener().ifPresent(OnGameEventListener::onGameOverEvent);
+    }
+
+    @Override
+    public void onGameUnpaused() {
+        this.getUpdateListener().ifPresent(OnGameEventListener::onGameUnpausedEvent);
+    }
+
+    @Override
+    public void onGamePaused() {
+        this.getUpdateListener().ifPresent(OnGameEventListener::onGamePausedEvent);
     }
 }

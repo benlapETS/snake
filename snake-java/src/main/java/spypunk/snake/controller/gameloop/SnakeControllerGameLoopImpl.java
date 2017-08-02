@@ -8,7 +8,7 @@
 
 package spypunk.snake.controller.gameloop;
 
-import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
+import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameEventListener;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -36,7 +36,7 @@ public final class SnakeControllerGameLoopImpl implements SnakeControllerGameLoo
     }
 
     @Override
-    public void setOnGameLoopUpdateListener(OnGameLoopUpdateListener listener) {
+    public void setOnGameLoopUpdateListener(OnGameEventListener listener) {
         //not implemented
         //TODO make interface an abstract class and make default implementation
     }

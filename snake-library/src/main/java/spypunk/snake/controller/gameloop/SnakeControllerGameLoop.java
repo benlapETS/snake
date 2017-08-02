@@ -8,11 +8,11 @@
 
 package spypunk.snake.controller.gameloop;
 
-import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
+import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameEventListener;
 
 public interface SnakeControllerGameLoop {
 
-    void setOnGameLoopUpdateListener(OnGameLoopUpdateListener listener);
+    void setOnGameLoopUpdateListener(OnGameEventListener listener);
 
     void start();
 

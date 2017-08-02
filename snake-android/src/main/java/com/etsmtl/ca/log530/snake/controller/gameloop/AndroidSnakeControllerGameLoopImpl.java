@@ -1,11 +1,9 @@
 package com.etsmtl.ca.log530.snake.controller.gameloop;
 
-import com.etsmtl.ca.log530.snake.ui.controller.AndroidSnakeController;
-import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
+import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameEventListener;
 
 import java.util.Optional;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import spypunk.snake.controller.gameloop.SnakeControllerGameLoop;
@@ -18,14 +16,14 @@ import spypunk.snake.controller.gameloop.SnakeControllerGameLoop;
 @Singleton
 public final class AndroidSnakeControllerGameLoopImpl implements SnakeControllerGameLoop {
 
-    private OnGameLoopUpdateListener listener;
+    private OnGameEventListener listener;
 
     private Optional<GameLoopThread> gameLoopThread = Optional.empty();
 
     @Override
-    public void setOnGameLoopUpdateListener(OnGameLoopUpdateListener listener) {
+    public void setOnGameLoopUpdateListener(OnGameEventListener listener) {
         this.listener = listener;
-        gameLoopThread.ifPresent(thread->thread.setOnGameLoopUpdateListener(listener));
+        gameLoopThread.ifPresent(thread->thread.setOnGameEventListener(listener));
     }
 
     @Override

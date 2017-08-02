@@ -1,7 +1,7 @@
 package com.etsmtl.ca.log530.snake.ui.controller;
 
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeImpl;
-import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameLoopUpdateListener;
+import com.etsmtl.ca.log530.snake.ui.controller.listener.OnGameEventListener;
 
 import java.util.Optional;
 
@@ -14,17 +14,25 @@ import spypunk.snake.ui.controller.input.SnakeController;
 
 public abstract class AndroidSnakeController implements SnakeController {
 
-    Optional<OnGameLoopUpdateListener> updateListener = Optional.empty();
-    public final void setOnGameLoopUpdateListener(OnGameLoopUpdateListener listener){
+    private Optional<OnGameEventListener> updateListener = Optional.empty();
+    public final void setOnGameLoopUpdateListener(OnGameEventListener listener){
         this.updateListener = Optional.ofNullable(listener);
     }
 
-    public final Optional<OnGameLoopUpdateListener> getUpdateListener() {
+    public final Optional<OnGameEventListener> getUpdateListener() {
         return updateListener;
     }
 
     public abstract AndroidSnakeImpl getSnake();
 
     public abstract void stop();
+
+    public abstract void onFoodEaten();
+
+    public abstract void onGameOver();
+
+    public abstract void onGameUnpaused();
+
+    public abstract void onGamePaused();
 }
 

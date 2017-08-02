@@ -5,6 +5,7 @@ import com.etsmtl.ca.log530.snake.model.AndroidSnakeImpl;
 import com.etsmtl.ca.log530.snake.model.AndroidSnakeInstanceImpl;
 import com.etsmtl.ca.log530.snake.service.AndroidSnakeInstanceService;
 import com.etsmtl.ca.log530.snake.service.AndroidSnakeInstanceServiceImpl;
+import com.etsmtl.ca.log530.snake.sound.AndroidSoundService;
 import com.etsmtl.ca.log530.snake.ui.controller.AndroidSnakeController;
 
 import javax.inject.Inject;
@@ -23,12 +24,14 @@ import spypunk.snake.ui.controller.input.SnakeController;
 public class AndroidControllerCommandFactoryImpl extends AndroidControllerCommandFactory {
 
     private final AndroidSnakeInstanceService snakeInstanceService;
+    private AndroidSoundService soundService;
 
     //private final SoundPool pool;
 
     @Inject
-    public AndroidControllerCommandFactoryImpl(final AndroidSnakeInstanceService snakeInstanceService) {
+    public AndroidControllerCommandFactoryImpl(final AndroidSnakeInstanceService snakeInstanceService, AndroidSoundService soundService) {
         this.snakeInstanceService = snakeInstanceService;
+        this.soundService = soundService;
         //this.pool = new SoundPool.Builder().setMaxStreams(4).setAudioAttributes(AudioAttributes.CONTENT_TYPE_MUSIC)
     }
 
@@ -36,6 +39,7 @@ public class AndroidControllerCommandFactoryImpl extends AndroidControllerComman
     public SnakeControllerCommand<AndroidSnakeImpl> createNewGameSnakeControllerCommand() {
         //TODO start music
         //player.setDataSource(context.getResources().openRawResourceFd(R.raw.background));
+        soundService.onGameUnpaused();
         return snakeInstanceService::create;
     }
 
@@ -48,9 +52,10 @@ public class AndroidControllerCommandFactoryImpl extends AndroidControllerComman
                 snakeInstanceService.pause(snakeInstance);
 
                 final State state = snakeInstance.getState();
-                if (State.RUNNING.equals(state) || State.PAUSED.equals(state)) {
-                    //TODO pause music
-                    //soundService.pauseMusic();
+                if (State.RUNNING.equals(state)){
+                    soundService.onGamePaused();
+                } else if(State.PAUSED.equals(state)) {
+                    soundService.onGameUnpaused();
                 }
             }
         };
@@ -96,7 +101,8 @@ public class AndroidControllerCommandFactoryImpl extends AndroidControllerComman
     public SnakeControllerCommand<AndroidSnakeImpl> createGameOverSnakeControllerCommand() {
         return snake -> {
             //TODO play game over
-            //soundService.playMusic(SoundImpl.GAME_OVER)
+            soundService.onGamePaused();
+            soundService.onGameOver();
         };
     }
 
@@ -104,7 +110,7 @@ public class AndroidControllerCommandFactoryImpl extends AndroidControllerComman
     public SnakeControllerCommand<AndroidSnakeImpl> createFoodEatenSnakeControllerCommand() {
         return snake -> {
             //TODO play food eaten
-            //soundService.playSound(SoundImpl.FOOD_EATEN)
+            soundService.onFoodEaten();
         };
     }
 }

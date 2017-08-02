@@ -19,10 +19,11 @@ public class AndroidSnakeFood implements Food<Point> {
 
     private Type type;
 
+    private static final Random random = new Random();
+
     public AndroidSnakeFood(List<Point> foodPossibleLocations) {
-        Random random = new Random();
-        final int foodIndex = random.nextInt(foodPossibleLocations.size());
-        final Point location = foodPossibleLocations.get(foodIndex);
+
+        final Point location = foodPossibleLocations.get(random.nextInt(foodPossibleLocations.size()));
         final Type type = random.nextInt(BONUS_FOOD_RANDOM) == 0 ? Type.BONUS
                 : Type.NORMAL;
         this.location = location;
