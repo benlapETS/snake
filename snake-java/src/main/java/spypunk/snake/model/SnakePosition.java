@@ -6,6 +6,7 @@ package spypunk.snake.model;
 import java.awt.Point;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 
 import spypunk.snake.constants.SnakeConstants;
 
@@ -14,21 +15,21 @@ import spypunk.snake.constants.SnakeConstants;
  *
  */
 public class SnakePosition implements Position<Point>{
-  private Deque<Point> snakeParts;
+  private LinkedList<Point> snakeParts;
   private Point lastPartRemoved;
 
   /**
    * 
    */
   public SnakePosition() {
-    snakeParts = new ArrayDeque<>();
+    snakeParts = new LinkedList<>();
     final int x = SnakeConstants.WIDTH / 2;
     snakeParts.add(new Point(x, 2));
     snakeParts.add(new Point(x, 1));
     snakeParts.add(new Point(x, 0));
   }
 
-  public Deque<Point> getParts() {
+  public LinkedList<Point> getParts() {
     return snakeParts;
   }
 

@@ -4,8 +4,10 @@ import android.graphics.Point;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -71,9 +73,9 @@ public class AndroidSnakeInstanceImpl extends SnakeInstance<Point, AndroidSnakeD
         return currentMovementFrame;
     }
 
-    public List<Point> getSnakeParts() {
+    public LinkedList<Point> getSnakeParts() {
         // TODO Propagate queue to system later
-        return new ArrayList<>(position.getParts());
+        return position.getParts();
     }
 
     public AndroidSnakeDirection getSnakeDirection() {

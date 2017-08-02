@@ -11,8 +11,10 @@ package spypunk.snake.model;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -70,9 +72,9 @@ public class SnakeInstanceImpl extends SnakeInstance<Point, SnakeDirection>{
         return currentMovementFrame;
     }
 
-  public List<Point> getSnakeParts() {
+  public LinkedList<Point> getSnakeParts() {
     // TODO Propagate queue to system later
-    return new ArrayList<>(position.getParts());
+    return position.getParts();
   }
 
     public SnakeDirection getSnakeDirection() {

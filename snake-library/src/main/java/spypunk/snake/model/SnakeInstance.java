@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Queue;
 
 import spypunk.snake.model.Direction;
 
@@ -34,7 +35,7 @@ public abstract class SnakeInstance<T, D extends Direction> {
 
     public abstract int getCurrentMovementFrame();
 
-    public abstract List<T> getSnakeParts();
+    public abstract Queue<T> getSnakeParts();
 
     public abstract D getSnakeDirection();
 

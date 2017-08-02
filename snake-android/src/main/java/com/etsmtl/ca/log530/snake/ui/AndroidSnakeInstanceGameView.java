@@ -73,6 +73,8 @@ public class AndroidSnakeInstanceGameView extends SurfaceView implements SnakeGa
     private Typeface statFont;
     private RectF statRectangle;
 
+    private RectF drawingRectangle = new RectF();
+
     private Paint strokePaint;
 
     private Bitmap normalFood, bonusFood, normalFoodImage, bonusFoodImage;
@@ -439,11 +441,8 @@ public class AndroidSnakeInstanceGameView extends SurfaceView implements SnakeGa
     }
 
     private RectF getRectangle(final Point location) {
-
-        if (!rectanglesCache.containsKey(location)) {
-            rectanglesCache.put(location, new RectF(x + location.x * cellSize, y + location.y * cellSize, x + location.x * cellSize + cellSize, y + location.y * cellSize + cellSize));
-        }
-        return rectanglesCache.get(location);
+        drawingRectangle.set(x + location.x * cellSize, y + location.y * cellSize, x + location.x * cellSize + cellSize, y + location.y * cellSize + cellSize);
+        return drawingRectangle;
     }
 
     private void renderSnakeNew(final Canvas canvas) {
